@@ -191,12 +191,17 @@ export function Contact() {
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="https://formspree.io/f/mjkekglj"   // ✨ kendi Formspree endpoint'in
+                method="POST"
+                className="space-y-6"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">{t('contact.form.name')} *</Label>
                     <Input
                       id="name"
+                      name="name"
                       value={formData.name}
                       onChange={(e) => handleChange('name', e.target.value)}
                       className={`bg-input-background border-border ${errors.name ? 'border-red-500' : ''}`}
@@ -209,6 +214,7 @@ export function Contact() {
                     <Label htmlFor="email">{t('contact.form.email')} *</Label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
@@ -224,6 +230,7 @@ export function Contact() {
                   <Label htmlFor="company">{t('contact.form.company')}</Label>
                   <Input
                     id="company"
+                    name="company"
                     value={formData.company}
                     onChange={(e) => handleChange('company', e.target.value)}
                     className="bg-input-background border-border"
@@ -243,12 +250,15 @@ export function Contact() {
                       <SelectItem value="other">{t('contact.form.service.other')}</SelectItem>
                     </SelectContent>
                   </Select>
+                   
+                   <input type="hidden" name="service" value={formData.service} />
                 </div>
                 
                 <div className="space-y-2">
                   <Label htmlFor="message">{t('contact.form.message')} *</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     rows={4}
                     value={formData.message}
                     onChange={(e) => handleChange('message', e.target.value)}
