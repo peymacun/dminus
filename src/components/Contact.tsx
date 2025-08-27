@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
@@ -9,9 +9,12 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import { Mail, Phone, MapPin, Send, AlertCircle, CheckCircle } from 'lucide-react'
 import { useLanguage } from './LanguageContext'
+import { useForm, ValidationError } from '@formspree/react'   // ✨ Formspree
 
 export function Contact() {
   const { t } = useLanguage()
+
+  // -- mevcut state yapını koruyoruz
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,83 +26,52 @@ export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
+  // ✨ Formspree hook
+  const [fsState, fsHandleSubmit] = useForm('mjkekglj')
+
+  // Formspree state'ini senin eskisiyle eşliyoruz (UI bozulmasın diye)
+  useEffect(() => {
+    setIsSubmitting(fsState.submitting)
+    if (fsState.succeeded) {
+      setSubmitStatus('success')
+      // başarıdan sonra alanları temizle
+      setFormData({ name: '', email: '', company: '', service: '', message: '' })
+      setErrors({})
+    } else if (fsState.errors && fsState.errors.length > 0) {
+      setSubmitStatus('error')
+    }
+  }, [fsState.submitting, fsState.succeeded, fsState.errors])
+
+  // kendi validation'ını aynen tutuyoruz
   const validateForm = () => {
     const newErrors: Record<string, string> = {}
-    
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required'
-    }
-    
+    if (!formData.name.trim()) newErrors.name = 'Name is required'
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address'
     }
-    
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required'
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters long'
     }
-    
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // ✨ Artık kendi API'ne fetch yok; validation'dan sonra Formspree'ye gönderiyoruz
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
-    if (!validateForm()) {
-      return
-    }
-    
-    setIsSubmitting(true)
     setSubmitStatus('idle')
-    
-    try {
-      // In a real implementation, this would call your API endpoint
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-      
-      if (response.ok) {
-        setSubmitStatus('success')
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          service: '',
-          message: ''
-        })
-      } else {
-        throw new Error('Failed to submit form')
-      }
-    } catch (error) {
-      // Fallback for demo - in reality this would be a proper API call
-      console.log('Form submission (demo):', formData)
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        service: '',
-        message: ''
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
+    if (!validateForm()) return
+    // Formspree handleSubmit'e event'i veriyoruz
+    fsHandleSubmit(e)
   }
 
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
-    // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: '' }))
-    }
+    if (errors[field]) setErrors(prev => ({ ...prev, [field]: '' }))
   }
 
   return (
@@ -111,13 +83,12 @@ export function Contact() {
             {t('contact.subtitle')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
               <h3 className="text-foreground mb-6">{t('contact.info.title')}</h3>
-              
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="p-2 bg-primary/10 rounded-lg">
@@ -125,30 +96,24 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-muted-foreground">{t('contact.info.email')}</p>
-                    <a 
-                      href="mailto:contact@dminus.co"
-                      className="text-foreground hover:text-primary transition-colors duration-200"
-                    >
+                    <a href="mailto:contact@dminus.co" className="text-foreground hover:text-primary transition-colors duration-200">
                       contact@dminus.co
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-muted-foreground">{t('contact.info.phone')}</p>
-                    <a 
-                      href="tel:+4915234784383"
-                      className="text-foreground hover:text-primary transition-colors duration-200"
-                    >
+                    <a href="tel:+4915234784383" className="text-foreground hover:text-primary transition-colors duration-200">
                       +49 1523 4784383
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-3">
                   <div className="p-2 bg-primary/10 rounded-lg">
                     <MapPin className="h-5 w-5 text-primary" />
@@ -160,7 +125,7 @@ export function Contact() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <h4 className="text-foreground mb-4">{t('contact.hours.title')}</h4>
               <div className="space-y-2 text-muted-foreground">
@@ -170,7 +135,7 @@ export function Contact() {
               </div>
             </div>
           </div>
-          
+
           {/* Contact Form */}
           <Card className="bg-card border-border">
             <CardHeader>
@@ -183,49 +148,46 @@ export function Contact() {
                   <p className="text-green-800 dark:text-green-200">{t('contact.form.success')}</p>
                 </div>
               )}
-              
+
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-900/50 rounded-lg flex items-center space-x-2">
                   <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
                   <p className="text-red-800 dark:text-red-200">{t('contact.form.error')}</p>
                 </div>
               )}
-              
-              <form
-                action="https://formspree.io/f/mjkekglj"   // ✨ kendi Formspree endpoint'in
-                method="POST"
-                className="space-y-6"
-              >
+
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">{t('contact.form.name')} *</Label>
                     <Input
                       id="name"
-                      name="name"
+                      name="name"   // <-- Formspree için gerekli
                       value={formData.name}
                       onChange={(e) => handleChange('name', e.target.value)}
                       className={`bg-input-background border-border ${errors.name ? 'border-red-500' : ''}`}
+                      required
                     />
-                    {errors.name && (
-                      <p className="text-sm text-red-600 dark:text-red-400">{errors.name}</p>
-                    )}
+                    <ValidationError prefix="Name" field="name" errors={fsState.errors} />
+                    {errors.name && <p className="text-sm text-red-600 dark:text-red-400">{errors.name}</p>}
                   </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="email">{t('contact.form.email')} *</Label>
                     <Input
                       id="email"
-                      name="email"
+                      name="email"  // <-- Formspree için gerekli
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
                       className={`bg-input-background border-border ${errors.email ? 'border-red-500' : ''}`}
+                      required
                     />
-                    {errors.email && (
-                      <p className="text-sm text-red-600 dark:text-red-400">{errors.email}</p>
-                    )}
+                    <ValidationError prefix="Email" field="email" errors={fsState.errors} />
+                    {errors.email && <p className="text-sm text-red-600 dark:text-red-400">{errors.email}</p>}
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="company">{t('contact.form.company')}</Label>
                   <Input
@@ -236,7 +198,7 @@ export function Contact() {
                     className="bg-input-background border-border"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="service">{t('contact.form.service')}</Label>
                   <Select onValueChange={(value) => handleChange('service', value)}>
@@ -250,28 +212,28 @@ export function Contact() {
                       <SelectItem value="other">{t('contact.form.service.other')}</SelectItem>
                     </SelectContent>
                   </Select>
-                   
-                   <input type="hidden" name="service" value={formData.service} />
+                  {/* Select değeri submit edilsin diye */}
+                  <input type="hidden" name="service" value={formData.service} />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message">{t('contact.form.message')} *</Label>
                   <Textarea
                     id="message"
-                    name="message"
+                    name="message" // <-- Formspree için gerekli
                     rows={4}
                     value={formData.message}
                     onChange={(e) => handleChange('message', e.target.value)}
                     className={`bg-input-background border-border ${errors.message ? 'border-red-500' : ''}`}
                     placeholder={t('contact.form.message.placeholder')}
+                    required
                   />
-                  {errors.message && (
-                    <p className="text-sm text-red-600 dark:text-red-400">{errors.message}</p>
-                  )}
+                  <ValidationError prefix="Message" field="message" errors={fsState.errors} />
+                  {errors.message && <p className="text-sm text-red-600 dark:text-red-400">{errors.message}</p>}
                 </div>
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 group disabled:opacity-50"
                 >

@@ -7,6 +7,6 @@
   createRoot(document.getElementById("root")!).render(
   <>
     <App />
-    <Analytics />   {/* ✨ buraya ekle */}
+    <Analytics />  
   </>
 );
