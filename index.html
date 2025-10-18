@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dminus — Managed IT & Security | Rhein‑Main</title>
+  <meta name="description" content="Rhein‑Main bölgesinde KOBİ’ler için Managed IT & Security. M365, Intune, Ağ & Güvenlik, Yedekleme & Felaket Kurtarma." />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.14/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .container { max-width: 1100px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Dminus",
+    "url": "https://dminus.example",
+    "logo": "https://dminus.example/logo.png",
+    "sameAs": ["https://www.linkedin.com/company/dminus"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Frankfurt",
+      "postalCode": "60311",
+      "addressCountry": "DE"
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "info@dminus.example",
+      "telephone": "+49 69 000000",
+      "areaServed": "DE"
+    }],
+    "foundingDate": "2025",
+    "description": "Managed IT & Security für den Mittelstand im Rhein‑Main‑Gebiet"
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-800">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-xl bg-slate-900 text-white grid place-content-center font-bold">D−</div>
+        <span class="font-semibold">Dminus</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#services" class="hover:text-slate-900" data-i="nav.services">Hizmetler</a>
+        <a href="#process" class="hover:text-slate-900" data-i="nav.process">Süreç</a>
+        <a href="#pricing" class="hover:text-slate-900" data-i="nav.pricing">Fiyat</a>
+        <a href="#faq" class="hover:text-slate-900" data-i="nav.faq">SSS</a>
+        <a href="#contact" class="hover:text-slate-900" data-i="nav.contact">İletişim</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <select id="lang" class="border rounded-lg px-2 py-1 text-sm">
+          <option value="tr">TR</option>
+          <option value="de">DE</option>
+          <option value="en">EN</option>
+        </select>
+        <a href="#contact" class="hidden md:inline-block bg-slate-900 text-white px-4 py-2 rounded-xl text-sm" data-i="nav.cta">Teklif al</a>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border"><span>☰</span></button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
+      <nav class="container mx-auto px-4 py-2 flex flex-col text-sm">
+        <a href="#services" class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.services">Hizmetler</a>
+        <a href="#process" class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.process">Süreç</a>
+        <a href="#pricing" class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.pricing">Fiyat</a>
+        <a href="#faq" class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.faq">SSS</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.contact">İletişim</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg bg-slate-900 text-white" data-i="nav.cta">Teklif al</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="pt-16 md:pt-28 pb-10 md:pb-16 bg-gradient-to-b from-slate-50 to-white">
+    <div class="container mx-auto px-4 grid md:grid-cols-2 items-center gap-10">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight" data-i="hero.title">
+          Rhein‑Main’da KOBİ’ler için Managed IT & Security
+        </h1>
+        <p class="mt-4 text-slate-600" data-i="hero.subtitle">
+          Sorun değil sonuç üretiriz. M365, Intune, Ağ & Güvenlik, Yedekleme ve Felaket Kurtarma.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#contact" class="bg-slate-900 text-white px-5 py-3 rounded-xl" data-i="hero.cta1">Ücretsiz 30 dk keşif</a>
+          <a href="#pricing" class="border px-5 py-3 rounded-xl" data-i="hero.cta2">Paketleri gör</a>
+        </div>
+        <ul class="mt-6 grid grid-cols-2 gap-3 text-sm text-slate-700">
+          <li>• SLA 8×5, opsiyon 7×24</li>
+          <li>• Aylık sözleşme</li>
+          <li>• Sabit fiyat</li>
+          <li>• Rhein‑Main saha desteği</li>
+        </ul>
+      </div>
+      <div class="bg-white border rounded-2xl p-5 shadow-sm">
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <div class="p-4 rounded-xl bg-slate-50">
+            <div class="text-xs text-slate-500">M365 uç nokta</div>
+            <div class="text-2xl font-semibold">+127</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50">
+            <div class="text-xs text-slate-500">Yama başarı</div>
+            <div class="text-2xl font-semibold">99.3%</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50">
+            <div class="text-xs text-slate-500">Ortalama yanıt</div>
+            <div class="text-2xl font-semibold">12 dk</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50">
+            <div class="text-xs text-slate-500">Beceri alanı</div>
+            <div class="text-2xl font-semibold">Intune • EDR • DR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold" data-i="services.title">Hizmetler</h2>
+      <p class="mt-2 text-slate-600" data-i="services.lead">Kritik alanlara odaklı yönetilen hizmetler.</p>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="border rounded-2xl p-5">
+          <h3 class="font-semibold" data-i="svc1.h">Managed IT</h3>
+          <p class="text-sm text-slate-600 mt-2" data-i="svc1.p">Helpdesk 8×5, envanter, yama, izleme, varlık yönetimi.</p>
+        </div>
+        <div class="border rounded-2xl p-5">
+          <h3 class="font-semibold" data-i="svc2.h">M365 & Intune</h3>
+          <p class="text-sm text-slate-600 mt-2" data-i="svc2.p">Cihaz profilleri, şartlı erişim, e‑posta güvenliği, lisans optimizasyonu.</p>
+        </div>
+        <div class="border rounded-2xl p-5">
+          <h3 class="font-semibold" data-i="svc3.h">Ağ & Güvenlik</h3>
+          <p class="text-sm text-slate-600 mt-2" data-i="svc3.p">Firewall, VPN, Wi‑Fi, SIEM/EDR koordinasyonu, zafiyet yönetimi.</p>
+        </div>
+        <div class="border rounded-2xl p-5">
+          <h3 class="font-semibold" data-i="svc4.h">Yedekleme & DR</h3>
+          <p class="text-sm text-slate-600 mt-2" data-i="svc4.p">365 ve sunucu yedekleri, kurtarma tatbikatı, RPO/RTO planlama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold" data-i="process.title">Süreç</h2>
+      <div class="mt-8 grid md:grid-cols-4 gap-5 text-sm">
+        <div class="border rounded-2xl p-5 bg-white">
+          <div class="text-xs text-slate-500">1</div>
+          <h3 class="font-semibold mt-1" data-i="pr1.h">Ön görüşme</h3>
+          <p class="text-slate-600 mt-2" data-i="pr1.p">Hedefler ve kapsam netleşir. 30 dk.</p>
+        </div>
+        <div class="border rounded-2xl p-5 bg-white">
+          <div class="text-xs text-slate-500">2</div>
+          <h3 class="font-semibold mt-1" data-i="pr2.h">ISA</h3>
+          <p class="text-slate-600 mt-2" data-i="pr2.p">Infrastrukturanalyse. Envanter ve riskler çıkar.</p>
+        </div>
+        <div class="border rounded-2xl p-5 bg-white">
+          <div class="text-xs text-slate-500">3</div>
+          <h3 class="font-semibold mt-1" data-i="pr3.h">Plan</h3>
+          <p class="text-slate-600 mt-2" data-i="pr3.p">Değişim projesi ve SLA tanımı.</p>
+        </div>
+        <div class="border rounded-2xl p-5 bg-white">
+          <div class="text-xs text-slate-500">4</div>
+          <h3 class="font-semibold mt-1" data-i="pr4.h">Devreye alma</h3>
+          <p class="text-slate-600 mt-2" data-i="pr4.p">Operasyon, raporlama, iyileştirme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold" data-i="pricing.title">Paketler</h2>
+      <p class="mt-2 text-slate-600" data-i="pricing.lead">Aylık sözleşme, kullanıcı başına sabit fiyat.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div class="border rounded-2xl p-6">
+          <div class="text-sm text-slate-500" data-i="pk1.tag">Başlangıç</div>
+          <div class="mt-2 text-3xl font-semibold">€29<span class="text-base text-slate-500">/kullanıcı</span></div>
+          <ul class="mt-4 text-sm text-slate-700 space-y-2">
+            <li>• Helpdesk 8×5</li>
+            <li>• İzleme & yama</li>
+            <li>• M365 temel yönetim</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block w-full text-center border px-4 py-2 rounded-xl" data-i="pricing.cta">Teklif iste</a>
+        </div>
+        <div class="border-2 border-slate-900 rounded-2xl p-6 shadow-sm">
+          <div class="text-sm text-slate-500" data-i="pk2.tag">Önerilen</div>
+          <div class="mt-2 text-3xl font-semibold">€59<span class="text-base text-slate-500">/kullanıcı</span></div>
+          <ul class="mt-4 text-sm text-slate-700 space-y-2">
+            <li>• + Intune</li>
+            <li>• + EDR koordinasyonu</li>
+            <li>• + O365 yedekleri</li>
+            <li>• Aylık rapor</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block w-full text-center bg-slate-900 text-white px-4 py-2 rounded-xl" data-i="pricing.cta">Teklif iste</a>
+        </div>
+        <div class="border rounded-2xl p-6">
+          <div class="text-sm text-slate-500" data-i="pk3.tag">Pro</div>
+          <div class="mt-2 text-3xl font-semibold">€99<span class="text-base text-slate-500">/kullanıcı</span></div>
+          <ul class="mt-4 text-sm text-slate-700 space-y-2">
+            <li>• 7×24 olay desteği</li>
+            <li>• DR planı & tatbikat</li>
+            <li>• C‑level brifing</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block w-full text-center border px-4 py-2 rounded-xl" data-i="pricing.cta">Teklif iste</a>
+        </div>
+      </div>
+      <p class="mt-3 text-xs text-slate-500" data-i="pricing.note">Fiyatlar örnektir. Nihai teklif, kullanıcı sayısı ve kapsam analizine göre verilir.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold" data-i="faq.title">Sıkça Sorulan Sorular</h2>
+      <div class="mt-6 divide-y border rounded-2xl">
+        <details class="p-5" open>
+          <summary class="font-semibold cursor-pointer" data-i="faq.q1">Aylık iptal mümkün mü?</summary>
+          <p class="mt-2 text-slate-700" data-i="faq.a1">Evet. Paketler aylık sözleşmelidir. 30 gün önceden bildirim yeterlidir.</p>
+        </details>
+        <details class="p-5">
+          <summary class="font-semibold cursor-pointer" data-i="faq.q2">Saha desteği kapsamı nedir?</summary>
+          <p class="mt-2 text-slate-700" data-i="faq.a2">Rhein‑Main bölgesi için yerinde destek sunarız. Bölge dışı için anlaşmalı ağımızı kullanırız.</p>
+        </details>
+        <details class="p-5">
+          <summary class="font-semibold cursor-pointer" data-i="faq.q3">Geçişi nasıl yapıyorsunuz?</summary>
+          <p class="mt-2 text-slate-700" data-i="faq.a3">ISA sonrası plan çıkar, risk almadan kademeli geçiş yapılır. Kesinti pencereleri önceden iletilir.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold" data-i="contact.title">İletişim</h2>
+      <p class="mt-2 text-slate-600" data-i="contact.lead">Kısa formu doldurun. 24 saat içinde dönüş yaparız.</p>
+      <form id="leadForm" class="mt-6 grid md:grid-cols-2 gap-4 border rounded-2xl p-5">
+        <div>
+          <label class="text-sm" for="name" data-i="f.name">Ad Soyad</label>
+          <input id="name" name="name" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="text-sm" for="company" data-i="f.company">Şirket</label>
+          <input id="company" name="company" class="mt-1 w-full border rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="text-sm" for="email">E‑posta</label>
+          <input id="email" name="email" type="email" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="text-sm" for="phone" data-i="f.phone">Telefon</label>
+          <input id="phone" name="phone" class="mt-1 w-full border rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="text-sm" for="users" data-i="f.users">Kullanıcı sayısı</label>
+          <select id="users" name="users" class="mt-1 w-full border rounded-lg px-3 py-2">
+            <option value="<10"><10</option>
+            <option value="10-49">10–49</option>
+            <option value="50-199">50–199</option>
+            <option value=">=200">≥200</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm" for="city" data-i="f.city">Şehir</label>
+          <input id="city" name="city" class="mt-1 w-full border rounded-lg px-3 py-2" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="text-sm" for="msg" data-i="f.msg">İhtiyaç</label>
+          <textarea id="msg" name="msg" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Managed IT, Intune, Firewall, DR…"></textarea>
+        </div>
+        <div class="md:col-span-2 flex items-start gap-2 text-sm">
+          <input id="gdpr" type="checkbox" required class="mt-1" />
+          <label for="gdpr" data-i="f.gdpr">Verilerimin teklif amacıyla işlenmesine onay veriyorum.</label>
+        </div>
+        <div class="md:col-span-2">
+          <button class="w-full md:w-auto bg-slate-900 text-white px-5 py-3 rounded-xl" data-i="f.submit">Gönder</button>
+          <p id="formMsg" class="mt-2 text-sm"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t py-10">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-xl bg-slate-900 text-white grid place-content-center font-bold">D−</div>
+        <div>
+          <div class="font-semibold">Dminus</div>
+          <div class="text-sm text-slate-500">Frankfurt am Main</div>
+        </div>
+      </div>
+      <div class="text-sm text-slate-600 space-x-4">
+        <a href="#" id="impressumBtn">Impressum</a>
+        <a href="#" id="privacyBtn">Datenschutz</a>
+      </div>
+      <div class="text-sm text-slate-600">© <span id="y"></span> Dminus</div>
+    </div>
+  </footer>
+
+  <!-- Simple modals -->
+  <dialog id="impressum" class="p-0 rounded-2xl w-[min(760px,92vw)]">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2">Impressum</h3>
+      <p class="text-sm text-slate-700">Dminus, Musterstraße 1, 60311 Frankfurt am Main, Deutschland</p>
+      <p class="text-sm text-slate-700">E‑Mail: info@dminus.example • Tel: +49 69 000000</p>
+      <div class="mt-4 text-right"><button class="border px-4 py-2 rounded-xl" onclick="document.getElementById('impressum').close()">Kapat</button></div>
+    </div>
+  </dialog>
+  <dialog id="privacy" class="p-0 rounded-2xl w-[min(760px,92vw)]">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2">Datenschutz</h3>
+      <p class="text-sm text-slate-700">Bu sitede sadece zorunlu çerezler kullanılır. Form verileri yalnızca teklif iletişimi için işlenir.</p>
+      <div class="mt-4 text-right"><button class="border px-4 py-2 rounded-xl" onclick="document.getElementById('privacy').close()">Kapat</button></div>
+    </div>
+  </dialog>
+
+  <!-- Cookie notice -->
+  <div id="cookie" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 z-50 max-w-xl hidden">
+    <div class="bg-white border rounded-2xl shadow p-4 text-sm">
+      <p class="text-slate-700" data-i="cookie.txt">Zorunlu çerezleri kabul ederek siteyi kullanmaya devam edebilirsiniz.</p>
+      <div class="mt-3 flex gap-2 justify-end">
+        <button id="cookieOk" class="bg-slate-900 text-white px-4 py-2 rounded-xl" data-i="cookie.ok">Kabul et</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Simple modals
+    document.getElementById('impressumBtn')?.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('impressum').showModal();});
+    document.getElementById('privacyBtn')?.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('privacy').showModal();});
+
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Cookie consent (very simple)
+    const cookie = document.getElementById('cookie');
+    if (!localStorage.getItem('cookie-ok')) cookie.classList.remove('hidden');
+    document.getElementById('cookieOk')?.addEventListener('click', () => { localStorage.setItem('cookie-ok', '1'); cookie.classList.add('hidden'); });
+
+    // i18n dictionary
+    const dict = {
+      tr: {
+        'nav.services': 'Hizmetler', 'nav.process': 'Süreç', 'nav.pricing': 'Fiyat', 'nav.faq': 'SSS', 'nav.contact': 'İletişim', 'nav.cta': 'Teklif al',
+        'hero.title': 'Rhein‑Main’da KOBİ’ler için Managed IT & Security',
+        'hero.subtitle': 'Sorun değil sonuç üretiriz. M365, Intune, Ağ & Güvenlik, Yedekleme ve Felaket Kurtarma.',
+        'hero.cta1': 'Ücretsiz 30 dk keşif', 'hero.cta2': 'Paketleri gör',
+        'services.title': 'Hizmetler', 'services.lead': 'Kritik alanlara odaklı yönetilen hizmetler.',
+        'svc1.h': 'Managed IT', 'svc1.p': 'Helpdesk 8×5, envanter, yama, izleme, varlık yönetimi.',
+        'svc2.h': 'M365 & Intune', 'svc2.p': 'Cihaz profilleri, şartlı erişim, e‑posta güvenliği, lisans optimizasyonu.',
+        'svc3.h': 'Ağ & Güvenlik', 'svc3.p': 'Firewall, VPN, Wi‑Fi, SIEM/EDR koordinasyonu, zafiyet yönetimi.',
+        'svc4.h': 'Yedekleme & DR', 'svc4.p': '365 ve sunucu yedekleri, kurtarma tatbikatı, RPO/RTO planlama.',
+        'process.title': 'Süreç', 'pr1.h': 'Ön görüşme', 'pr1.p': 'Hedefler ve kapsam netleşir. 30 dk.', 'pr2.h': 'ISA', 'pr2.p': 'Infrastrukturanalyse. Envanter ve riskler çıkar.', 'pr3.h': 'Plan', 'pr3.p': 'Değişim projesi ve SLA tanımı.', 'pr4.h': 'Devreye alma', 'pr4.p': 'Operasyon, raporlama, iyileştirme.',
+        'pricing.title': 'Paketler', 'pricing.lead': 'Aylık sözleşme, kullanıcı başına sabit fiyat.', 'pricing.cta': 'Teklif iste', 'pricing.note': 'Fiyatlar örnektir. Nihai teklif, kullanıcı sayısı ve kapsam analizine göre verilir.',
+        'faq.title': 'Sıkça Sorulan Sorular', 'faq.q1': 'Aylık iptal mümkün mü?', 'faq.a1': 'Evet. Paketler aylık sözleşmelidir. 30 gün önceden bildirim yeterlidir.', 'faq.q2': 'Saha desteği kapsamı nedir?', 'faq.a2': 'Rhein‑Main bölgesi için yerinde destek sunarız. Bölge dışı için anlaşmalı ağımızı kullanırız.', 'faq.q3': 'Geçişi nasıl yapıyorsunuz?', 'faq.a3': 'ISA sonrası plan çıkar, risk almadan kademeli geçiş yapılır. Kesinti pencereleri önceden iletilir.',
+        'contact.title': 'İletişim', 'contact.lead': 'Kısa formu doldurun. 24 saat içinde dönüş yaparız.',
+        'f.name': 'Ad Soyad', 'f.company': 'Şirket', 'f.phone': 'Telefon', 'f.users': 'Kullanıcı sayısı', 'f.city': 'Şehir', 'f.msg': 'İhtiyaç', 'f.gdpr': 'Verilerimin teklif amacıyla işlenmesine onay veriyorum.', 'f.submit': 'Gönder',
+        'cookie.txt': 'Zorunlu çerezleri kabul ederek siteyi kullanmaya devam edebilirsiniz.', 'cookie.ok': 'Kabul et'
+      },
+      de: {
+        'nav.services': 'Leistungen', 'nav.process': 'Ablauf', 'nav.pricing': 'Preise', 'nav.faq': 'FAQ', 'nav.contact': 'Kontakt', 'nav.cta': 'Angebot',
+        'hero.title': 'Managed IT & Security für den Mittelstand im Rhein‑Main‑Gebiet',
+        'hero.subtitle': 'Ergebnisse statt Ausreden. M365, Intune, Netzwerk & Security, Backup & Notfallwiederherstellung.',
+        'hero.cta1': 'Kostenloses 30‑Min‑Gespräch', 'hero.cta2': 'Pakete ansehen',
+        'services.title': 'Leistungen', 'services.lead': 'Fokus auf geschäftskritische Bereiche.',
+        'svc1.h': 'Managed IT', 'svc1.p': 'Helpdesk 8×5, Inventar, Patch, Monitoring, Asset‑Management.',
+        'svc2.h': 'M365 & Intune', 'svc2.p': 'Geräteprofile, Conditional Access, Mail‑Security, Lizenz‑Optimierung.',
+        'svc3.h': 'Netzwerk & Sicherheit', 'svc3.p': 'Firewall, VPN, Wi‑Fi, SIEM/EDR‑Koordination, Schwachstellen.',
+        'svc4.h': 'Backup & DR', 'svc4.p': 'M365/Server‑Backups, Restore‑Drills, RPO/RTO‑Planung.',
+        'process.title': 'Ablauf', 'pr1.h': 'Erstgespräch', 'pr1.p': 'Ziele und Scope. 30 Min.', 'pr2.h': 'ISA', 'pr2.p': 'Infrastrukturanalyse. Inventar & Risiken.', 'pr3.h': 'Plan', 'pr3.p': 'Change‑Projekt & SLA.', 'pr4.h': 'Go‑Live', 'pr4.p': 'Betrieb, Reporting, Verbesserungen.',
+        'pricing.title': 'Pakete', 'pricing.lead': 'Monatlich kündbar. Fixpreis pro Nutzer.', 'pricing.cta': 'Angebot anfragen', 'pricing.note': 'Preise sind Richtwerte. Finale Angebote nach Analyse.',
+        'faq.title': 'Häufige Fragen', 'faq.q1': 'Monatliche Kündigung möglich?', 'faq.a1': 'Ja. 30 Tage vorab reichen.', 'faq.q2': 'Vor‑Ort‑Abdeckung?', 'faq.a2': 'Rhein‑Main als Standard. Außerhalb via Partnernetz.', 'faq.q3': 'Wie läuft die Migration?', 'faq.a3': 'Nach ISA erstellen wir einen risikofreien Stufenplan. Wartungsfenster im Voraus.',
+        'contact.title': 'Kontakt', 'contact.lead': 'Formular ausfüllen. Rückmeldung in 24 Std.',
+        'f.name': 'Name', 'f.company': 'Firma', 'f.phone': 'Telefon', 'f.users': 'Benutzerzahl', 'f.city': 'Stadt', 'f.msg': 'Bedarf', 'f.gdpr': 'Ich stimme der Verarbeitung zum Angebotszweck zu.', 'f.submit': 'Senden',
+        'cookie.txt': 'Nur notwendige Cookies werden eingesetzt.', 'cookie.ok': 'OK'
+      },
+      en: {
+        'nav.services': 'Services', 'nav.process': 'Process', 'nav.pricing': 'Pricing', 'nav.faq': 'FAQ', 'nav.contact': 'Contact', 'nav.cta': 'Get quote',
+        'hero.title': 'Managed IT & Security for SMEs in Rhein‑Main',
+        'hero.subtitle': 'Results over excuses. M365, Intune, Network & Security, Backup & DR.',
+        'hero.cta1': 'Free 30‑min consult', 'hero.cta2': 'See packages',
+        'services.title': 'Services', 'services.lead': 'Managed services for critical areas.',
+        'svc1.h': 'Managed IT', 'svc1.p': 'Helpdesk 8×5, inventory, patching, monitoring, assets.',
+        'svc2.h': 'M365 & Intune', 'svc2.p': 'Profiles, Conditional Access, mail security, license optimization.',
+        'svc3.h': 'Network & Security', 'svc3.p': 'Firewall, VPN, Wi‑Fi, SIEM/EDR coordination, vuln mgmt.',
+        'svc4.h': 'Backup & DR', 'svc4.p': 'M365/server backups, restore drills, RPO/RTO planning.',
+        'process.title': 'Process', 'pr1.h': 'Intro call', 'pr1.p': 'Goals and scope. 30 min.', 'pr2.h': 'ISA', 'pr2.p': 'Infra analysis. Inventory and risks.', 'pr3.h': 'Plan', 'pr3.p': 'Change project and SLA.', 'pr4.h': 'Go‑live', 'pr4.p': 'Ops, reporting, improvement.',
+        'pricing.title': 'Packages', 'pricing.lead': 'Monthly terms. Fixed price per user.', 'pricing.cta': 'Request quote', 'pricing.note': 'Prices are examples. Final quote after analysis.',
+        'faq.title': 'FAQ', 'faq.q1': 'Monthly cancellation?', 'faq.a1': 'Yes. 30‑day notice.', 'faq.q2': 'On‑site coverage?', 'faq.a2': 'Rhein‑Main by default. Outside via partners.', 'faq.q3': 'Migration steps?', 'faq.a3': 'Post‑ISA phased plan. Maintenance windows agreed.',
+        'contact.title': 'Contact', 'contact.lead': 'Fill the short form. We reply within 24h.',
+        'f.name': 'Full name', 'f.company': 'Company', 'f.phone': 'Phone', 'f.users': 'Users', 'f.city': 'City', 'f.msg': 'Need', 'f.gdpr': 'I consent to processing for quotation.', 'f.submit': 'Send',
+        'cookie.txt': 'Only essential cookies are used on this site.', 'cookie.ok': 'Accept'
+      }
+    };
+
+    function applyLang(l){
+      document.querySelectorAll('[data-i]').forEach(el=>{
+        const k = el.getAttribute('data-i');
+        if (dict[l] && dict[l][k]) el.textContent = dict[l][k];
+      });
+      localStorage.setItem('lang', l);
+      document.documentElement.lang = l;
+    }
+
+    const langSel = document.getElementById('lang');
+    const saved = localStorage.getItem('lang') || 'tr';
+    langSel.value = saved; applyLang(saved);
+    langSel.addEventListener('change', e=>applyLang(e.target.value));
+
+    // Dummy submit (replace with your endpoint, e.g., /api/lead -> Resend)
+    const leadForm = document.getElementById('leadForm');
+    const formMsg = document.getElementById('formMsg');
+    leadForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(leadForm).entries());
+      try {
+        // Example: await fetch('/api/lead', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)});
+        formMsg.textContent = (langSel.value==='de') ? 'Danke. Wir melden uns in 24 Std.' : (langSel.value==='en' ? 'Thanks. We will reply within 24h.' : 'Teşekkürler. 24 saat içinde döneriz.');
+        formMsg.className = 'mt-2 text-sm text-green-700';
+        leadForm.reset();
+      } catch(err){
+        formMsg.textContent = (langSel.value==='de') ? 'Fehler. Bitte später erneut.' : (langSel.value==='en' ? 'Error. Try again later.' : 'Hata. Lütfen daha sonra tekrar deneyin.');
+        formMsg.className = 'mt-2 text-sm text-red-700';
+      }
+    });
+  </script>
+</body>
+</html>
