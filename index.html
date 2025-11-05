@@ -1,323 +1,438 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dminus — Managed IT & Security | Rhein-Main</title>
-  <meta name="description" content="Rhein-Main bölgesinde KOBİ’ler için Managed IT & Security. M365, Intune, Ağ & Güvenlik, Yedekleme & DR." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dminus – Sector‑Ready IT & Security</title>
+  <meta name="description" content="Secure, manageable and scalable IT for finance, manufacturing, retail, healthcare and households. VPN+RDP, AD, file sharing, backup.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    html{scroll-behavior:smooth} body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .container{max-width:1120px}
+    html { scroll-behavior: smooth; }
+    .container { max-width: 1120px; }
   </style>
 </head>
-<body class="bg-white text-slate-800">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-xl bg-slate-900 text-white grid place-content-center font-extrabold">D−</div>
-        <span class="font-semibold tracking-tight">Dminus</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#services" class="hover:text-slate-900" data-i="nav.services">Hizmetler</a>
-        <a href="#process"  class="hover:text-slate-900" data-i="nav.process">Süreç</a>
-        <a href="#faq"      class="hover:text-slate-900" data-i="nav.faq">SSS</a>
-        <a href="#contact"  class="inline-flex items-center rounded-xl bg-slate-900 px-4 py-2 text-white hover:bg-slate-800" data-i="nav.cta">Teklif al</a>
-      </nav>
-      <div class="flex items-center gap-2">
-        <select id="lang" class="border rounded-lg px-2 py-1 text-sm">
-          <option value="tr">TR</option><option value="de">DE</option><option value="en">EN</option>
-        </select>
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border"><span>☰</span></button>
+<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+  <!-- TOP UTIL BAR -->
+  <div class="bg-slate-900/80 border-b border-slate-800 text-xs">
+    <div class="container mx-auto px-4 py-2 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-4">
+        <a href="tel:01607739345" class="hover:text-blue-400">📞 01607739345</a>
+        <a href="mailto:info@dminus.co" class="hover:text-blue-400">✉️ info@dminus.co</a>
       </div>
+      <!-- was static: now i18n -->
+      <a href="#contact" data-i18n="cta.btn" class="inline-flex items-center rounded-lg bg-blue-600 px-3 py-1.5 text-white font-medium hover:bg-blue-700">Get in touch</a>
     </div>
-    <!-- Mobile -->
-    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
-      <nav class="container mx-auto px-4 py-2 flex flex-col text-sm">
-        <a href="#services" class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.services">Hizmetler</a>
-        <a href="#process"  class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.process">Süreç</a>
-        <a href="#faq"      class="px-3 py-2 rounded-lg hover:bg-slate-50" data-i="nav.faq">SSS</a>
-        <a href="#contact"  class="mt-1 px-3 py-2 rounded-lg bg-slate-900 text-white" data-i="nav.cta">Teklif al</a>
+  </div>
+  
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-slate-800 bg-slate-950/70">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-semibold text-xl tracking-tight"><span class="text-white">dMinus</span></a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-200">
+        <div class="relative" id="langMenu">
+          <button id="langBtn" class="text-xs border px-2 py-1 rounded hover:bg-gray-100 flex items-center gap-1" aria-haspopup="listbox" aria-expanded="false">
+            <span id="langLabel">TR</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="langList" class="absolute right-0 mt-2 w-32 rounded-md border border-slate-800 bg-slate-900/60 shadow-lg hidden">
+            <button data-lang="tr" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">Türkçe</button>
+            <button data-lang="de" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">Deutsch</button>
+            <button data-lang="en" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">English</button>
+          </div>
+        </div>
+        <a href="#sectors" data-i18n="nav.sectors" class="hover:text-blue-400">Sektörler</a>
+        <a href="#services" data-i18n="nav.services" class="hover:text-blue-400">Hizmetler</a>
+        <a href="#personal" data-i18n="nav.personal" class="hover:text-blue-400">Bireysel</a>
+        <a href="#contact" data-i18n="nav.contact" class="hover:text-blue-400">İletişim</a>
       </nav>
+      <a href="#contact" data-i18n="cta.quote" class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700">Teklif Al</a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="hero" class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800"></div>
-    <div class="relative container mx-auto px-4 py-16 md:py-24 text-white">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
+  <!-- HERO -->
+  <section id="home" class="relative">
+    <div class="container mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight"><span data-i18n="hero.titleA">Sektörlere Özel</span> <span class="text-blue-400" data-i18n="hero.titleB">IT & Güvenlik</span></h1>
+        <p class="mt-4 text-slate-300/80 max-w-prose" data-i18n="hero.subtitle">Finans, üretim, perakende, sağlık ve daha fazlası için güvenli, yönetilebilir ve ölçeklenebilir altyapılar kuruyoruz. VPN + RDP, Active Directory, dosya paylaşımı, yedekleme ve izleme.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#sectors" data-i18n="hero.btnSectors" class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700">Sektör Çözümleri</a>
+          <a href="#services" data-i18n="hero.btnServices" class="inline-flex items-center justify-center rounded-xl border border-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-900/60">Tüm Hizmetler</a>
+        </div>
+        <div class="mt-8 grid gap-4 md:gap-6">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 shadow-sm p-5 backdrop-blur">
+            <div class="font-medium text-base">🔒 <span data-i18n="hero.card1.t">Zero‑Trust VPN + RDP</span></div>
+            <p class="text-sm text-slate-300/80 mt-1" data-i18n="hero.card1.d">İnternete açık RDP yok. Tüm erişim MFA’lı VPN üzerinden.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 shadow-sm p-5 backdrop-blur">
+            <div class="font-medium text-base">🗂️ <span data-i18n="hero.card2.t">AD & Dosya Paylaşımı</span></div>
+            <p class="text-sm text-slate-300/80 mt-1" data-i18n="hero.card2.d">Kullanıcı izolasyonu, ortak ve kişisel alanlar, GPO ile denetim.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 shadow-sm p-5 backdrop-blur">
+            <div class="font-medium text-base">☁️ <span data-i18n="hero.card3.t">Yedekleme & Felaket Kurtarma</span></div>
+            <p class="text-sm text-slate-300/80 mt-1" data-i18n="hero.card3.d">NAS + bulut kopya, test restore ve kurtarma prosedürleri.</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWg2cjUyaWVpeDB2cWxxY2k4N2Z4OGhjcW9hemduOGQxaGI1M3g2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ITRemFlr5tS39AzQUL/giphy.gif" alt="IT Security" class="w-full h-[420px] md:h-[520px] object-cover rounded-2xl shadow-xl border border-slate-800/50" />
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS / USP -->
+  <section class="bg-gradient-to-b from-slate-950 to-slate-950">
+    <div class="container mx-auto px-4 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
+        <div class="text-3xl font-bold text-white">10+</div>
+        <div class="text-slate-300/80 text-sm">Yıl tecrübe</div>
+      </div>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
+        <div class="text-3xl font-bold text-white">250+</div>
+        <div class="text-slate-300/80 text-sm">Başarılı kurulum</div>
+      </div>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
+        <div class="text-3xl font-bold text-white">24/7</div>
+        <div class="text-slate-300/80 text-sm">İzleme ve destek</div>
+      </div>
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
+        <div class="text-3xl font-bold text-white">NIS2‑ready</div>
+        <div class="text-slate-300/80 text-sm">Uyum odaklı süreçler</div>
+      </div>
+    </div>
+  </section>
+
+  <section id=\"sectors\"" class="bg-gradient-to-b from-slate-950 to-slate-950 ">
+    <div class="container mx-auto px-4 py-12 md:py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="sectors.h">Sektörlere Özel Çözümler</h2>
+      <p class="mt-2 text-slate-300/80" data-i18n="sectors.p">Her sektörün ihtiyacına uygun kurulum ve yönetim.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
+          <div class="text-base font-semibold mb-2">🏦 <span data-i18n="sec.fin.title">Finans & Danışmanlık</span></div>
+          <ul class="text-sm list-disc list-inside text-slate-200 space-y-1">
+            <li data-i18n="sec.fin.b1">VPN + RDP güvenli uzaktan erişim</li>
+            <li data-i18n="sec.fin.b2">Active Directory & erişim yönetimi</li>
+            <li data-i18n="sec.fin.b3">Dosya paylaşımı ve versiyonlama</li>
+            <li data-i18n="sec.fin.b4">Yedekleme ve regülasyon uyumu</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
+          <div class="text-base font-semibold mb-2">🏭 <span data-i18n="sec.ind.title">Üretim & Endüstri</span></div>
+          <ul class="text-sm list-disc list-inside text-slate-200 space-y-1">
+            <li data-i18n="sec.ind.b1">Sunucu ve ağ altyapısı</li>
+            <li data-i18n="sec.ind.b2">ERP entegrasyon desteği</li>
+            <li data-i18n="sec.ind.b3">Site‑to‑site VPN</li>
+            <li data-i18n="sec.ind.b4">Siber güvenlik izleme</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
+          <div class="text-base font-semibold mb-2">🛍️ <span data-i18n="sec.ret.title">Perakende & Hizmet</span></div>
+          <ul class="text-sm list-disc list-inside text-slate-200 space-y-1">
+            <li data-i18n="sec.ret.b1">POS/kasa sistemleri</li>
+            <li data-i18n="sec.ret.b2">Wi‑Fi & ağ kurulumları</li>
+            <li data-i18n="sec.ret.b3">Kamera entegrasyonu</li>
+            <li data-i18n="sec.ret.b4">Bulut yedekleme</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
+          <div class="text-base font-semibold mb-2">🩺 <span data-i18n="sec.health.title">Sağlık & Klinikler</span></div>
+          <ul class="text-sm list-disc list-inside text-slate-200 space-y-1">
+            <li data-i18n="sec.health.b1">Veri güvenliği & gizlilik</li>
+            <li data-i18n="sec.health.b2">Hasta kayıt sistemleri</li>
+            <li data-i18n="sec.health.b3">Yüksek erişilebilirlik</li>
+            <li data-i18n="sec.health.b4">Audit & uyum raporları</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING (left as EN static) -->
+  <section id="pricing" class="bg-gradient-to-b from-slate-950 to-slate-950 ">
+    <div class="container mx-auto px-4 py-14 text-center">
+      <h2 class="text-2xl md:text-3xl font-semibold">Best Prices Tailored to Your Industry</h2>
+      <p class="mt-2 text-slate-300/80 max-w-xl mx-auto">Every organization is different. We provide customized IT pricing aligned with your business size and security needs.</p>
+      <div class="mt-8 inline-flex items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/60 px-6 py-4 text-slate-100 font-medium shadow-sm">
+        Contact us for a tailored quote.
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container mx-auto px-4 py-12 md:py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="services.h">Hizmet Kataloğu</h2>
+      <p class="mt-2 text-slate-300/80 max-w-prose" data-i18n="services.p">Sunucu & Domain, Ağ & VPN, Siber Güvenlik, Bulut & M365, Uç Nokta Yönetimi, Yedekleme & Kurtarma.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition"><div class="font-semibold mb-1" data-i18n="svc.srv.t">🖥️ Sunucu & Domain</div><p class="text-sm text-slate-200" data-i18n="svc.srv.d">Windows Server, AD DS, GPO, dosya paylaşımları ve yazıcı yönetimi.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition"><div class="font-semibold mb-1" data-i18n="svc.net.t">🌐 Ağ & VPN</div><p class="text-sm text-slate-200" data-i18n="svc.net.d">WireGuard/OpenVPN, segmentasyon, güvenlik duvarı ve izleme.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition"><div class="font-semibold mb-1" data-i18n="svc.sec.t">🛡️ Siber Güvenlik</div><p class="text-sm text-slate-200" data-i18n="svc.sec.d">MFA, EDR/AV, patch management, zafiyet taraması ve olay müdahale.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition"><div class="font-semibold mb-1" data-i18n="svc.cloud.t">☁️ Bulut & M365</div><p class="text-sm text-slate-200" data-i18n="svc.cloud.d">Exchange Online, SharePoint/OneDrive, lisans ve güvenlik politikaları.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition"><div class="font-semibold mb-1" data-i18n="svc.endpoint.t">💻 Uç Nokta Yönetimi</div><p class="text-sm text-slate-200" data-i18n="svc.endpoint.d">Intune/Autopilot, imajlama, envanter ve otomatik konfigürasyon.</p></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition"><div class="font-semibold mb-1" data-i18n="svc.backup.t">🗄️ Yedekleme & Kurtarma</div><p class="text-sm text-slate-200" data-i18n="svc.backup.d">NAS/Cloud yedek, test restore, iş sürekliliği ve felaket planları.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section id="personal" class="bg-gradient-to-b from-slate-950 to-slate-950 ">
+    <div class="container mx-auto px-4 py-12 md:py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="personal.h">Bireysel Kullanıcılara IT Hizmetleri</h2>
+      <p class="mt-2 text-slate-300/80 max-w-prose" data-i18n="personal.p">Ev ve kişisel kullanım için profesyonel teknik destek.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-4 md:gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
+          <ul class="text-sm list-disc list-inside text-slate-200 space-y-1">
+            <li data-i18n="pers.b1">Bilgisayar kurulum ve performans optimizasyonu</li>
+            <li data-i18n="pers.b2">Veri yedekleme ve kurtarma</li>
+            <li data-i18n="pers.b3">Ev interneti ve Wi‑Fi yapılandırma</li>
+            <li data-i18n="pers.b4">Zararlı yazılım temizliği ve güvenlik</li>
+            <li data-i18n="pers.b5">Printer/NAS/akıllı cihaz entegrasyonu</li>
+            <li data-i18n="pers.b6">Uzaktan destek</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
+          <div class="font-semibold mb-1" data-i18n="personal.fast">⚡ Hızlı Yardım</div>
+          <p class="text-sm text-slate-200" data-i18n="personal.fastd">Çoğu sorun için aynı gün uzaktan destek sağlarız. Gerektiğinde yerinde servis verilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section>
+    <div class="container mx-auto px-4 py-10">
+      <div class="rounded-2xl p-6 md:p-8 bg-gradient-to-br from-slate-900 to-slate-800 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
-          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight" data-i="hero.title">
-            Rhein-Main’da KOBİ’ler için Managed IT & Security
-          </h1>
-          <p class="mt-4 text-slate-200" data-i="hero.subtitle">
-            Sonuç odaklı yönetilen hizmetler: M365, Intune, Ağ & Güvenlik, Yedekleme ve Felaket Kurtarma.
-          </p>
-          <div class="mt-7 flex flex-wrap gap-3">
-            <a href="#contact" class="bg-white text-slate-900 px-5 py-3 rounded-xl font-semibold" data-i="hero.cta1">Ücretsiz 30 dk keşif</a>
-            <a href="#services" class="px-5 py-3 rounded-xl ring-1 ring-white/40" data-i="hero.cta2">Hizmetleri gör</a>
-          </div>
-          <p class="mt-6 text-sm text-slate-300">
-            <span class="font-semibold">Tailored pricing:</span> fiyatlar firma başına kapsam ve SLA’ya göre özelleştirilir.
-          </p>
+          <h3 class="text-xl md:text-2xl font-semibold" data-i18n="cta.h">İhtiyacınıza özel bir plan oluşturalım</h3>
+          <p class="text-white/70 mt-1" data-i18n="cta.p">Kısa bir keşif görüşmesi ile kapsamı netleştirip teklif hazırlıyoruz.</p>
         </div>
-        <div class="bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="grid grid-cols-2 gap-4 text-sm">
-            <div class="p-4 rounded-xl bg-white/10">
-              <div class="text-xs text-slate-300">M365 uç nokta</div><div class="text-2xl font-semibold">+127</div>
+        <a href="#contact" data-i18n="cta.btn" class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container mx-auto px-4 py-12 md:py-14">
+      <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="contact.h">İletişim</h2>
+      <p class="mt-2 text-slate-300/80" data-i18n="contact.p">Bize ulaşın. 24 saat içinde dönüş yaparız.</p>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-sm md:col-span-2">
+          <form id="contactForm" class="grid gap-3">
+            <div class="grid md:grid-cols-2 gap-3">
+              <input required placeholder="Ad Soyad" data-i18n-placeholder="form.name" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
+              <input required type="email" placeholder="E‑posta" data-i18n-placeholder="form.email" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
             </div>
-            <div class="p-4 rounded-xl bg-white/10">
-              <div class="text-xs text-slate-300">Yama başarı</div><div class="text-2xl font-semibold">99.3%</div>
+            <input placeholder="Konu" data-i18n-placeholder="form.subject" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
+            <textarea required placeholder="İhtiyacınızı kısaca anlatın" data-i18n-placeholder="form.msg" class="min-h-[120px] w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+            <div class="flex items-center justify-between">
+              
+              <button type="submit" data-i18n="form.send" class="rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700">Gönder</button>
             </div>
-            <div class="p-4 rounded-xl bg-white/10">
-              <div class="text-xs text-slate-300">Ortalama yanıt</div><div class="text-2xl font-semibold">12 dk</div>
-            </div>
-            <div class="p-4 rounded-xl bg-white/10">
-              <div class="text-xs text-slate-300">Beceri</div><div class="text-2xl font-semibold">Intune • EDR • DR</div>
-            </div>
+            <p id="formMsg" class="hidden text-sm text-green-600" data-i18n="form.thanks">Teşekkürler. Mesajınız alındı.</p>
+          </form>
+        </div>
+        <div class="grid gap-4 self-start">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-sm text-sm text-slate-200">
+            <div class="font-semibold mb-2">dminus IT</div>
+            <div>📞 01607739345</div>
+            <div class="mt-1">✉️ info@dminus.co</div>
+          </div>
+          <!-- was static: now i18n -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-sm text-sm text-slate-200" data-i18n="onsite.note">Frankfurt ve 50 km çevresine yol ücreti olmadan yerinde servis. Daha uzak mesafeler için ücretli on‑site ziyaret. Uzaktan bağlantı ile hızlı ve profesyonel çözüm sağlıyoruz.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
-  <section id="services" class="py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold" data-i="services.title">Hizmetler</h2>
-      <p class="mt-2 text-slate-600" data-i="services.lead">Kritik alanlarda uçtan uca yönetilen hizmetler.</p>
-
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <article class="rounded-2xl bg-white shadow-sm p-6">
-          <h3 class="text-lg font-semibold" data-i="svc1.h">Managed IT</h3>
-          <p class="mt-2 text-slate-600" data-i="svc1.p">
-            8×5 helpdesk, varlık envanteri, otomatik yama ve izleme, cihaz yaşam döngüsü yönetimi.
-            Standart imaj ve politikalarla kullanıcı onboarding/offboarding, lisans yönetimi ve kapasite planlama raporları.
-            Olay yönetimi ve kök neden analizi ile kalıcı iyileştirme.
-          </p>
-          <ul class="mt-3 list-disc pl-5 text-slate-600 text-sm space-y-1">
-            <li>CMDB bütünlüğü ve dokümantasyon</li><li>Periyodik sağlık kontrolleri</li><li>Uzak/yerinde kurulum</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl bg-white shadow-sm p-6">
-          <h3 class="text-lg font-semibold" data-i="svc2.h">M365 & Intune</h3>
-          <p class="mt-2 text-slate-600" data-i="svc2.p">
-            Cihaz profilleri, şartlı erişim, DLP ve e-posta güvenliği. Zero-touch kurulum, self-service portal, otomatik uyum raporları.
-            Microsoft Secure Score artırma yol haritası ve lisans optimizasyonu.
-          </p>
-          <ul class="mt-3 list-disc pl-5 text-slate-600 text-sm space-y-1">
-            <li>Autopilot, BitLocker, UEM</li><li>SPF/DKIM/DMARC</li><li>Teams/SharePoint/OneDrive veri politikaları</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl bg-white shadow-sm p-6">
-          <h3 class="text-lg font-semibold" data-i="svc3.h">Ağ & Güvenlik</h3>
-          <p class="mt-2 text-slate-600" data-i="svc3.p">
-            Firewall, VPN, Wi-Fi tasarım ve sertifikasyon, EDR/SIEM koordinasyonu, zafiyet yönetimi ve Zero Trust segmentasyonu.
-            IDS/IPS ayar doğrulama ve log saklama politikaları.
-          </p>
-          <ul class="mt-3 list-disc pl-5 text-slate-600 text-sm space-y-1">
-            <li>MFA ve PAM devreye alma</li><li>802.1X NAC</li><li>Pen-test bulguları giderim planı</li>
-          </ul>
-        </article>
-
-        <article class="rounded-2xl bg-white shadow-sm p-6">
-          <h3 class="text-lg font-semibold" data-i="svc4.h">Yedekleme & Felaket Kurtarma</h3>
-          <p class="mt-2 text-slate-600" data-i="svc4.p">
-            3-2-1 kuralına uygun yedek, immutable repository, haftalık restore testleri. RPO/RTO planlama, AD ve sanallaştırma katmanı kurtarma tatbikatları.
-            BEC sonrası geri dönüş desteği ve yönetim özeti raporları.
-          </p>
-          <ul class="mt-3 list-disc pl-5 text-slate-600 text-sm space-y-1">
-            <li>Veeam entegrasyonları</li><li>Runbook ve prosedürler</li><li>ISO 27001’e uyumlu kayıt</li>
-          </ul>
-        </article>
-      </div>
+  <!-- BOTTOM CONTACT STRIP -->
+  <section class="border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-950">
+    <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+      <div class="font-medium">dminus • <span data-i18n="bottom.contact">İletişim</span></div>
+      <div class="text-slate-200">📞 01607739345 • ✉️ info@dminus.co</div>
     </div>
   </section>
 
-  <!-- Process -->
-  <section id="process" class="py-16 bg-slate-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold" data-i="process.title">Süreç</h2>
-      <ol class="mt-8 grid md:grid-cols-4 gap-5 text-sm">
-        <li class="rounded-2xl bg-white shadow-sm p-5"><div class="text-xs text-slate-500">1</div><h3 class="font-semibold mt-1" data-i="pr1.h">Ön görüşme</h3><p class="text-slate-600 mt-2" data-i="pr1.p">Hedefler ve kapsam. 30 dk.</p></li>
-        <li class="rounded-2xl bg-white shadow-sm p-5"><div class="text-xs text-slate-500">2</div><h3 class="font-semibold mt-1" data-i="pr2.h">ISA</h3><p class="text-slate-600 mt-2" data-i="pr2.p">Infrastrukturanalyse. Envanter ve riskler.</p></li>
-        <li class="rounded-2xl bg-white shadow-sm p-5"><div class="text-xs text-slate-500">3</div><h3 class="font-semibold mt-1" data-i="pr3.h">Plan</h3><p class="text-slate-600 mt-2" data-i="pr3.p">Değişim projesi ve SLA.</p></li>
-        <li class="rounded-2xl bg-white shadow-sm p-5"><div class="text-xs text-slate-500">4</div><h3 class="font-semibold mt-1" data-i="pr4.h">Devreye alma</h3><p class="text-slate-600 mt-2" data-i="pr4.p">Operasyon, raporlama, iyileştirme.</p></li>
-      </ol>
-      <p class="mt-4 text-slate-600 text-sm">Fiyatlandırma firmaya özeldir. Kapsam çıktıktan sonra teklif sunulur.</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold" data-i="faq.title">Sıkça Sorulan Sorular</h2>
-      <div class="mt-6 space-y-4">
-        <details class="group rounded-2xl bg-white shadow-sm p-6" open>
-          <summary class="cursor-pointer list-none flex items-center justify-between">
-            <span class="font-semibold" data-i="faq.q1">Aylık iptal mümkün mü?</span>
-            <svg class="ml-4 h-5 w-5 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p class="mt-3 text-slate-600" data-i="faq.a1">Evet. Sözleşmeler aylıktır; 30 gün önceden bildirim yeterlidir.</p>
-        </details>
-
-        <details class="group rounded-2xl bg-white shadow-sm p-6">
-          <summary class="cursor-pointer list-none flex items-center justify-between">
-            <span class="font-semibold" data-i="faq.q2">Saha desteği kapsamı nedir?</span>
-            <svg class="ml-4 h-5 w-5 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p class="mt-3 text-slate-600" data-i="faq.a2">Rhein-Main bölgesinde on-site standarttır. Bölge dışı için planlı ziyaret veya partner ağımızı kullanırız.</p>
-        </details>
-
-        <details class="group rounded-2xl bg-white shadow-sm p-6">
-          <summary class="cursor-pointer list-none flex items-center justify-between">
-            <span class="font-semibold" data-i="faq.q3">Geçişi nasıl yapıyorsunuz?</span>
-            <svg class="ml-4 h-5 w-5 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p class="mt-3 text-slate-600" data-i="faq.a3">ISA sonrası adımlı plan çıkarırız. Riskli değişiklikler bakım penceresinde, kullanıcı kesintisi minimumda tutulur.</p>
-        </details>
-
-        <details class="group rounded-2xl bg-white shadow-sm p-6">
-          <summary class="cursor-pointer list-none flex items-center justify-between">
-            <span class="font-semibold">Felaket kurtarma tatbikat sıklığı?</span>
-            <svg class="ml-4 h-5 w-5 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <p class="mt-3 text-slate-600">En az yılda iki kez. Masaüstü senaryo + gerçek restore birlikte. Yönetim özeti raporlanır.</p>
-        </details>
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800">
+    <div class="container mx-auto px-4 py-8 text-sm text-slate-300/80 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>© <span id="y"></span> dminus IT. <span data-i18n="rights">Tüm hakları saklıdır.</span></div>
+      <div class="flex items-center gap-4">
+        <a href="#home" class="hover:text-blue-400" data-i18n="nav.home">Anasayfa</a>
+        <a href="#services" class="hover:text-blue-400" data-i18n="nav.services">Hizmetler</a>
+        <a href="#contact" class="hover:text-blue-400" data-i18n="nav.contact">İletişim</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-slate-50">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-10 items-start">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold" data-i="contact.title">İletişim</h2>
-          <p class="mt-2 text-slate-600" data-i="contact.lead">Kısa formu doldurun. 24 saat içinde dönüş yaparız.</p>
-          <ul class="mt-6 text-sm text-slate-600 space-y-2">
-            <li>• İlk toplantı ücretsiz</li>
-            <li>• Çoğu kurulum uzaktan, kritik işler yerinde</li>
-            <li>• Veri gizliliği ve sözleşme şeffaf</li>
-          </ul>
-        </div>
-        <form id="leadForm" class="mx-auto w-full max-w-md rounded-2xl bg-white shadow-sm p-6 space-y-4">
-          <div>
-            <label class="text-sm" for="name" data-i="f.name">Ad Soyad</label>
-            <input id="name" name="name" required class="mt-1 w-full border rounded-lg px-3 py-2" />
-          </div>
-          <div>
-            <label class="text-sm" for="company" data-i="f.company">Şirket</label>
-            <input id="company" name="company" class="mt-1 w-full border rounded-lg px-3 py-2" />
-          </div>
-          <div>
-            <label class="text-sm" for="email">E-posta</label>
-            <input id="email" name="email" type="email" required class="mt-1 w-full border rounded-lg px-3 py-2" />
-          </div>
-          <div class="grid grid-cols-2 gap-3">
-            <div>
-              <label class="text-sm" for="users" data-i="f.users">Kullanıcı sayısı</label>
-              <select id="users" name="users" class="mt-1 w-full border rounded-lg px-3 py-2">
-                <option value="<10">&lt;10</option><option>10–49</option><option>50–199</option><option>&ge;200</option>
-              </select>
-            </div>
-            <div>
-              <label class="text-sm" for="city" data-i="f.city">Şehir</label>
-              <input id="city" name="city" class="mt-1 w-full border rounded-lg px-3 py-2" />
-            </div>
-          </div>
-          <div>
-            <label class="text-sm" for="msg" data-i="f.msg">İhtiyaç</label>
-            <textarea id="msg" name="msg" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2" placeholder="Managed IT, Intune, Firewall, DR…"></textarea>
-          </div>
-          <label class="flex items-start gap-2 text-sm">
-            <input id="gdpr" type="checkbox" required class="mt-1" />
-            <span data-i="f.gdpr">Verilerimin teklif amacıyla işlenmesine onay veriyorum.</span>
-          </label>
-          <button class="w-full bg-slate-900 text-white px-5 py-3 rounded-xl" data-i="f.submit">Gönder</button>
-          <p id="formMsg" class="mt-2 text-sm"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t">
-    <div class="container mx-auto px-4 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-xl bg-slate-900 text-white grid place-content-center font-extrabold">D−</div>
-        <div><div class="font-semibold">Dminus</div><div class="text-sm text-slate-500">Frankfurt am Main</div></div>
-      </div>
-      <div class="text-sm text-slate-600 space-x-4">
-        <a href="#" id="impressumBtn">Impressum</a><a href="#" id="privacyBtn">Datenschutz</a>
-      </div>
-      <div class="text-sm text-slate-600">© <span id="y"></span> Dminus</div>
     </div>
   </footer>
 
-  <!-- Modals -->
-  <dialog id="impressum" class="p-0 rounded-2xl w-[min(760px,92vw)]">
-    <div class="p-6"><h3 class="text-xl font-semibold mb-2">Impressum</h3>
-      <p class="text-sm text-slate-700">Dminus, Musterstraße 1, 60311 Frankfurt am Main, Deutschland</p>
-      <p class="text-sm text-slate-700">E-Mail: info@dminus.example • Tel: +49 69 000000</p>
-      <div class="mt-4 text-right"><button class="border px-4 py-2 rounded-xl" onclick="document.getElementById('impressum').close()">Kapat</button></div>
-    </div>
-  </dialog>
-  <dialog id="privacy" class="p-0 rounded-2xl w-[min(760px,92vw)]">
-    <div class="p-6"><h3 class="text-xl font-semibold mb-2">Datenschutz</h3>
-      <p class="text-sm text-slate-700">Bu sitede sadece zorunlu çerezler kullanılır. Form verileri yalnızca teklif iletişimi için işlenir.</p>
-      <div class="mt-4 text-right"><button class="border px-4 py-2 rounded-xl" onclick="document.getElementById('privacy').close()">Kapat</button></div>
-    </div>
-  </dialog>
-
   <script>
-    // Mobile menu
-    const menuBtn=document.getElementById('menuBtn'); const mobileMenu=document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click',()=>mobileMenu.classList.toggle('hidden'));
-
-    // Footer year
-    document.getElementById('y').textContent=new Date().getFullYear();
-
-    // Modals
-    document.getElementById('impressumBtn')?.addEventListener('click',e=>{e.preventDefault();document.getElementById('impressum').showModal();});
-    document.getElementById('privacyBtn')?.addEventListener('click',e=>{e.preventDefault();document.getElementById('privacy').showModal();});
-
-    // i18n
-    const dict={
-      tr:{'nav.services':'Hizmetler','nav.process':'Süreç','nav.faq':'SSS','nav.cta':'Teklif al',
-          'hero.title':'Rhein-Main’da KOBİ’ler için Managed IT & Security',
-          'hero.subtitle':'Sonuç odaklı yönetilen hizmetler: M365, Intune, Ağ & Güvenlik, Yedekleme ve Felaket Kurtarma.',
-          'hero.cta1':'Ücretsiz 30 dk keşif','hero.cta2':'Hizmetleri gör',
-          'services.title':'Hizmetler','services.lead':'Kritik alanlarda uçtan uca yönetilen hizmetler.',
-          'svc1.h':'Managed IT','svc1.p':'8×5 helpdesk, varlık envanteri, otomatik yama ve izleme, cihaz yaşam döngüsü yönetimi. Standart imaj ve politikalarla kullanıcı onboarding/offboarding, lisans yönetimi ve kapasite planlama raporları. Olay yönetimi ve kök neden analizi ile kalıcı iyileştirme.',
-          'svc2.h':'M365 & Intune','svc2.p':'Cihaz profilleri, şartlı erişim, DLP ve e-posta güvenliği. Zero-touch kurulum, self-service portal, otomatik uyum raporları. Microsoft Secure Score artırma ve lisans optimizasyonu.',
-          'svc3.h':'Ağ & Güvenlik','svc3.p':'Firewall, VPN, Wi-Fi tasarım ve sertifikasyon, EDR/SIEM koordinasyonu, zafiyet yönetimi ve Zero Trust segmentasyonu. IDS/IPS ayar doğrulama ve log saklama politikaları.',
-          'svc4.h':'Yedekleme & Felaket Kurtarma','svc4.p':'3-2-1 kuralına uygun yedek, immutable repository, haftalık restore testleri. RPO/RTO planlama, AD ve sanallaştırma katmanı kurtarma tatbikatları. BEC sonrası geri dönüş ve yönetim özeti.',
-          'process.title':'Süreç','pr1.h':'Ön görüşme','pr1.p':'Hedefler ve kapsam. 30 dk.','pr2.h':'ISA','pr2.p':'Infrastrukturanalyse. Envanter ve riskler.','pr3.h':'Plan','pr3.p':'Değişim projesi ve SLA.','pr4.h':'Devreye alma','pr4.p':'Operasyon, raporlama, iyileştirme.',
-          'faq.title':'Sıkça Sorulan Sorular'},
-      de:{'nav.services':'Leistungen','nav.process':'Ablauf','nav.faq':'FAQ','nav.cta':'Angebot',
-          'hero.title':'Managed IT & Security für den Mittelstand im Rhein-Main-Gebiet',
-          'hero.subtitle':'Ergebnisorientierte Services: M365, Intune, Netzwerk & Sicherheit, Backup & Notfallwiederherstellung.',
-          'hero.cta1':'Kostenloses 30-Min-Gespräch','hero.cta2':'Leistungen ansehen',
-          'services.title':'Leistungen','services.lead':'End-to-end gemanagte Services in kritischen Bereichen.'},
-      en:{'nav.services':'Services','nav.process':'Process','nav.faq':'FAQ','nav.cta':'Get quote',
-          'hero.title':'Managed IT & Security for SMEs in Rhein-Main',
-          'hero.subtitle':'Outcome-driven services: M365, Intune, Network & Security, Backup & DR.',
-          'hero.cta1':'Free 30-min consult','hero.cta2':'See services',
-          'services.title':'Services','services.lead':'End-to-end managed services for critical areas.'}
+    // i18n dictionary
+    const dict = {
+      tr: {
+        'nav.sectors':'Sektörler','nav.services':'Hizmetler','nav.personal':'Bireysel','nav.contact':'İletişim','nav.home':'Anasayfa',
+        'cta.quote':'Teklif Al',
+        'cta.btn':'İletişime geç',
+        'onsite.note':'Frankfurt ve 50 km çevresine yol ücreti olmadan yerinde servis. Daha uzak mesafeler için ücretli on‑site ziyaret. Uzaktan bağlantı ile hızlı ve profesyonel çözüm sağlıyoruz.',
+        'hero.titleA':'Sektörlere Özel','hero.titleB':'IT & Güvenlik',
+        'hero.subtitle':'Finans, üretim, perakende, sağlık ve daha fazlası için güvenli, yönetilebilir ve ölçeklenebilir altyapılar kuruyoruz. VPN + RDP, Active Directory, dosya paylaşımı, yedekleme ve izleme.',
+        'hero.btnSectors':'Sektör Çözümleri','hero.btnServices':'Tüm Hizmetler',
+        'hero.card1.t':'Zero‑Trust VPN + RDP','hero.card1.d':'İnternete açık RDP yok. Tüm erişim MFA’lı VPN üzerinden.',
+        'hero.card2.t':'AD & Dosya Paylaşımı','hero.card2.d':'Kullanıcı izolasyonu, ortak ve kişisel alanlar, GPO ile denetim.',
+        'hero.card3.t':'Yedekleme & Felaket Kurtarma','hero.card3.d':'NAS + bulut kopya, test restore ve kurtarma prosedürleri.',
+        'sectors.h':'Sektörlere Özel Çözümler','sectors.p':'Her sektörün ihtiyacına uygun kurulum ve yönetim.',
+        'sec.fin.title':'Finans & Danışmanlık','sec.fin.b1':'VPN + RDP güvenli uzaktan erişim','sec.fin.b2':'Active Directory & erişim yönetimi','sec.fin.b3':'Dosya paylaşımı ve versiyonlama','sec.fin.b4':'Yedekleme ve regülasyon uyumu',
+        'sec.ind.title':'Üretim & Endüstri','sec.ind.b1':'Sunucu ve ağ altyapısı','sec.ind.b2':'ERP entegrasyon desteği','sec.ind.b3':'Site‑to‑site VPN','sec.ind.b4':'Siber güvenlik izleme',
+        'sec.ret.title':'Perakende & Hizmet','sec.ret.b1':'POS/kasa sistemleri','sec.ret.b2':'Wi‑Fi & ağ kurulumları','sec.ret.b3':'Kamera entegrasyonu','sec.ret.b4':'Bulut yedekleme',
+        'sec.health.title':'Sağlık & Klinikler','sec.health.b1':'Veri güvenliği & gizlilik','sec.health.b2':'Hasta kayıt sistemleri','sec.health.b3':'Yüksek erişilebilirlik','sec.health.b4':'Audit & uyum raporları',
+        'services.h':'Hizmet Kataloğu','services.p':'Sunucu & Domain, Ağ & VPN, Siber Güvenlik, Bulut & M365, Uç Nokta Yönetimi, Yedekleme & Kurtarma.',
+        'svc.srv.t':'🖥️ Sunucu & Domain','svc.srv.d':'Windows Server, AD DS, GPO, dosya paylaşımları ve yazıcı yönetimi.',
+        'svc.net.t':'🌐 Ağ & VPN','svc.net.d':'WireGuard/OpenVPN, segmentasyon, güvenlik duvarı ve izleme.',
+        'svc.sec.t':'🛡️ Siber Güvenlik','svc.sec.d':'MFA, EDR/AV, patch management, zafiyet taraması ve olay müdahale.',
+        'svc.cloud.t':'☁️ Bulut & M365','svc.cloud.d':'Exchange Online, SharePoint/OneDrive, lisans ve güvenlik politikaları.',
+        'svc.endpoint.t':'💻 Uç Nokta Yönetimi','svc.endpoint.d':'Intune/Autopilot, imajlama, envanter ve otomatik konfigürasyon.',
+        'svc.backup.t':'🗄️ Yedekleme & Kurtarma','svc.backup.d':'NAS/Cloud yedek, test restore, iş sürekliliği ve felaket planları.',
+        'personal.h':'Bireysel Kullanıcılara IT Hizmetleri','personal.p':'Ev ve kişisel kullanım için profesyonel teknik destek.',
+        'personal.fast':'⚡ Hızlı Yardım','personal.fastd':'Çoğu sorun için aynı gün uzaktan destek sağlarız. Gerektiğinde yerinde servis verilir.',
+        'pers.b1':'Bilgisayar kurulum ve performans optimizasyonu','pers.b2':'Veri yedekleme ve kurtarma','pers.b3':'Ev interneti ve Wi‑Fi yapılandırma','pers.b4':'Zararlı yazılım temizliği ve güvenlik','pers.b5':'Printer/NAS/akıllı cihaz entegrasyonu','pers.b6':'Uzaktan destek',
+        'cta.h':'İhtiyacınıza özel bir plan oluşturalım','cta.p':'Kısa bir keşif görüşmesi ile kapsamı netleştirip teklif hazırlıyoruz.','cta.btn':'İletişime geç',
+        'contact.h':'İletişim','contact.p':'Bize ulaşın. 24 saat içinde dönüş yaparız.',
+        'form.name':'Ad Soyad','form.email':'E‑posta','form.subject':'Konu','form.msg':'İhtiyacınızı kısaca anlatın','form.send':'Gönder','form.thanks':'Teşekkürler. Mesajınız alındı.',
+        'social':'Sosyal','bottom.contact':'İletişim','rights':'Tüm hakları saklıdır.'
+      },
+      de: {
+        'nav.sectors':'Branchen','nav.services':'Leistungen','nav.personal':'Privat','nav.contact':'Kontakt','nav.home':'Startseite',
+        'cta.quote':'Angebot anfordern',
+        'cta.btn':'Kontakt aufnehmen',
+        'onsite.note':'Vor-Ort-Service im Raum Frankfurt bis 50 km ohne Anfahrtskosten. Bei größeren Entfernungen kostenpflichtiger On-Site-Service. Schnelle und professionelle Lösungen per Fernzugriff.',
+        'hero.titleA':'Branchenspezifische','hero.titleB':'IT & Sicherheit',
+        'hero.subtitle':'Wir bauen sichere, verwaltbare und skalierbare Infrastrukturen für Finanzen, Industrie, Handel, Gesundheitswesen u.v.m. VPN + RDP, Active Directory, Dateifreigaben, Backup und Monitoring.',
+        'hero.btnSectors':'Branchenlösungen','hero.btnServices':'Alle Leistungen',
+        'hero.card1.t':'Zero‑Trust VPN + RDP','hero.card1.d':'Kein offenes RDP im Internet. Zugriff ausschließlich über MFA‑geschützte VPN.',
+        'hero.card2.t':'AD & Dateifreigaben','hero.card2.d':'Benutzerisolation, gemeinsame und persönliche Bereiche, Kontrolle via GPO.',
+        'hero.card3.t':'Backup & Notfallwiederherstellung','hero.card3.d':'NAS + Cloud‑Kopie, Test‑Restore und Recovery‑Prozeduren.',
+        'sectors.h':'Branchenspezifische Lösungen','sectors.p':'Bereitstellung und Betrieb abgestimmt auf Ihre Branche.',
+        'sec.fin.title':'Finanzen & Beratung','sec.fin.b1':'Sicherer Fernzugriff (VPN + RDP)','sec.fin.b2':'Active Directory & Berechtigungen','sec.fin.b3':'Dateifreigaben & Versionierung','sec.fin.b4':'Backup & Compliance',
+        'sec.ind.title':'Produktion & Industrie','sec.ind.b1':'Server- und Netzwerkinfrastruktur','sec.ind.b2':'ERP‑Integrationssupport','sec.ind.b3':'Site‑to‑Site‑VPN','sec.ind.b4':'Security‑Monitoring',
+        'sec.ret.title':'Einzelhandel & Services','sec.ret.b1':'POS/Kassensysteme','sec.ret.b2':'WLAN & Netzaufbau','sec.ret.b3':'Kamera‑Integration','sec.ret.b4':'Cloud‑Backups',
+        'sec.health.title':'Gesundheit & Kliniken','sec.health.b1':'Datenschutz & Vertraulichkeit','sec.health.b2':'Patientensystem‑Support','sec.health.b3':'Hohe Verfügbarkeit','sec.health.b4':'Audit & Compliance‑Reports',
+        'services.h':'Leistungskatalog','services.p':'Server & Domain, Netzwerk & VPN, Cyber Security, Cloud & M365, Endpoint‑Management, Backup & Recovery.',
+        'svc.srv.t':'🖥️ Server & Domain','svc.srv.d':'Windows Server, AD DS, GPO, Freigaben und Druckerverwaltung.',
+        'svc.net.t':'🌐 Netzwerk & VPN','svc.net.d':'WireGuard/OpenVPN, Segmentierung, Firewall und Monitoring.',
+        'svc.sec.t':'🛡️ Cyber Security','svc.sec.d':'MFA, EDR/AV, Patch‑Management, Schwachstellenscan und Incident‑Response.',
+        'svc.cloud.t':'☁️ Cloud & M365','svc.cloud.d':'Exchange Online, SharePoint/OneDrive, Lizenzen und Sicherheitsrichtlinien.',
+        'svc.endpoint.t':'💻 Endpoint‑Management','svc.endpoint.d':'Intune/Autopilot, Imaging, Inventar und Auto‑Konfiguration.',
+        'svc.backup.t':'🗄️ Backup & Recovery','svc.backup.d':'NAS/Cloud‑Backups, Test‑Restore, Business Continuity und DR‑Pläne.',
+        'personal.h':'IT‑Services für Privatpersonen','personal.p':'Professioneller Support für Ihr Zuhause.',
+        'personal.fast':'⚡ Schnelle Hilfe','personal.fastd':'In den meisten Fällen bieten wir noch am selben Tag Remote‑Support. Vor‑Ort‑Service nach Bedarf.',
+        'pers.b1':'PC‑Einrichtung & Leistungsoptimierung','pers.b2':'Datensicherung & Wiederherstellung','pers.b3':'Heim‑Internet & WLAN‑Setup','pers.b4':'Malware‑Bereinigung & Sicherheit','pers.b5':'Drucker/NAS/Smart‑Home‑Integration','pers.b6':'Remote‑Support',
+        'cta.h':'Lassen Sie uns einen passenden Plan erstellen','cta.p':'Kurzes Erstgespräch, dann erhalten Sie ein konkretes Angebot.','cta.btn':'Kontakt aufnehmen',
+        'contact.h':'Kontakt','contact.p':'Schreiben Sie uns. Wir melden uns innerhalb von 24 Stunden.',
+        'form.name':'Name','form.email':'E‑Mail','form.subject':'Betreff','form.msg':'Beschreiben Sie kurz Ihr Anliegen','form.send':'Senden','form.thanks':'Danke. Ihre Nachricht ist eingegangen.',
+        'social':'Sozial','bottom.contact':'Kontakt','rights':'Alle Rechte vorbehalten.'
+      },
+      en: {
+        'nav.sectors':'Industries','nav.services':'Services','nav.personal':'Personal','nav.contact':'Contact','nav.home':'Home',
+        'cta.quote':'Get a quote',
+        'cta.btn':'Get in touch',
+        'onsite.note':'On-site service within 50 km of Frankfurt with no travel fee. Paid on-site visits for longer distances. Fast and professional remote support.',
+        'hero.titleA':'Industry‑ready','hero.titleB':'IT & Security',
+        'hero.subtitle':'We build secure, manageable and scalable infrastructures for finance, manufacturing, retail, healthcare and more. VPN + RDP, Active Directory, file sharing, backup and monitoring.',
+        'hero.btnSectors':'Industry Solutions','hero.btnServices':'All Services',
+        'hero.card1.t':'Zero‑Trust VPN + RDP','hero.card1.d':'No exposed RDP on the internet. Access only through MFA‑protected VPN.',
+        'hero.card2.t':'AD & File Sharing','hero.card2.d':'User isolation, shared and personal areas, governed via GPO.',
+        'hero.card3.t':'Backup & Disaster Recovery','hero.card3.d':'NAS + cloud copy, test restores and recovery procedures.',
+        'sectors.h':'Industry Solutions','sectors.p':'Deployment and operations tailored to your industry.',
+        'sec.fin.title':'Finance & Advisory','sec.fin.b1':'Secure remote access (VPN + RDP)','sec.fin.b2':'Active Directory & access control','sec.fin.b3':'File sharing and versioning','sec.fin.b4':'Backup & compliance',
+        'sec.ind.title':'Manufacturing & Industry','sec.ind.b1':'Server and network infrastructure','sec.ind.b2':'ERP integration support','sec.ind.b3':'Site‑to‑site VPN','sec.ind.b4':'Security monitoring',
+        'sec.ret.title':'Retail & Services','sec.ret.b1':'POS/cash systems','sec.ret.b2':'Wi‑Fi & network setup','sec.ret.b3':'CCTV integration','sec.ret.b4':'Cloud backups',
+        'sec.health.title':'Healthcare & Clinics','sec.health.b1':'Data security & privacy','sec.health.b2':'EMR system support','sec.health.b3':'High availability','sec.health.b4':'Audit & compliance reports',
+        'services.h':'Service Catalog','services.p':'Server & Domain, Network & VPN, Cyber Security, Cloud & M365, Endpoint Management, Backup & Recovery.',
+        'svc.srv.t':'🖥️ Server & Domain','svc.srv.d':'Windows Server, AD DS, GPO, shares and printer management.',
+        'svc.net.t':'🌐 Network & VPN','svc.net.d':'WireGuard/OpenVPN, segmentation, firewall and monitoring.',
+        'svc.sec.t':'🛡️ Cyber Security','svc.sec.d':'MFA, EDR/AV, patch management, vulnerability scans and incident response.',
+        'svc.cloud.t':'☁️ Cloud & M365','svc.cloud.d':'Exchange Online, SharePoint/OneDrive, licensing and security policies.',
+        'svc.endpoint.t':'💻 Endpoint Management','svc.endpoint.d':'Intune/Autopilot, imaging, inventory and auto‑configuration.',
+        'svc.backup.t':'🗄️ Backup & Recovery','svc.backup.d':'NAS/Cloud backups, test restores, business continuity and DR plans.',
+        'personal.h':'IT Services for Individuals','personal.p':'Professional technical support for home and personal use.',
+        'personal.fast':'⚡ Quick Help','personal.fastd':'Same‑day remote support for most issues. On‑site service when needed.',
+        'pers.b1':'PC setup and performance tuning','pers.b2':'Data backup and recovery','pers.b3':'Home internet & Wi‑Fi setup','pers.b4':'Malware cleanup & security','pers.b5':'Printer/NAS/smart device integration','pers.b6':'Remote support',
+        'cta.h':'Let’s craft the right plan for you','cta.p':'We run a quick discovery call and send a tailored proposal.','cta.btn':'Get in touch',
+        'contact.h':'Contact','contact.p':'Reach out and we will reply within 24 hours.',
+        'form.name':'Full name','form.email':'Email','form.subject':'Subject','form.msg':'Briefly describe your needs','form.send':'Send','form.thanks':'Thanks. Your message has been received.',
+        'social':'Social','bottom.contact':'Contact','rights':'All rights reserved.'
+      }
     };
-    function applyLang(l){document.querySelectorAll('[data-i]').forEach(el=>{const k=el.getAttribute('data-i');if(dict[l]&&dict[l][k])el.textContent=dict[l][k];});localStorage.setItem('lang',l);document.documentElement.lang=l;}
-    const langSel=document.getElementById('lang');const saved=localStorage.getItem('lang')||'tr';langSel.value=saved;applyLang(saved);langSel.addEventListener('change',e=>applyLang(e.target.value));
 
-    // Dummy submit
-    const leadForm=document.getElementById('leadForm');const formMsg=document.getElementById('formMsg')||document.createElement('p');
-    leadForm?.addEventListener('submit',async e=>{e.preventDefault();formMsg.textContent=(langSel.value==='de')?'Danke. Wir melden uns in 24 Std.':(langSel.value==='en'?'Thanks. We will reply within 24h.':'Teşekkürler. 24 saat içinde döneriz.');formMsg.className='mt-2 text-sm text-green-700';leadForm.reset();});
+    const userLangRaw = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
+    const userLang = userLangRaw.startsWith('de') ? 'de' : userLangRaw.startsWith('en') ? 'en' : 'tr';
+    const savedLang = localStorage.getItem('lang');
+    const currentLang = savedLang || userLang;
+    document.documentElement.lang = currentLang;
+
+    function applyI18n(lang){
+      const t = dict[lang] || dict.tr;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(t[key]) el.textContent = t[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+        const key = el.getAttribute('data-i18n-placeholder');
+        if(t[key]) el.setAttribute('placeholder', t[key]);
+      });
+    }
+
+    // init
+    applyI18n(currentLang);
+
+    // language dropdown logic
+    const langBtn = document.getElementById('langBtn');
+    const langList = document.getElementById('langList');
+    const langLabel = document.getElementById('langLabel');
+    if (langLabel) langLabel.textContent = (currentLang || 'tr').toUpperCase();
+
+    function setLang(lang){
+      localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
+      applyI18n(lang);
+      if (langLabel) langLabel.textContent = lang.toUpperCase();
+    }
+
+    if (langBtn) {
+      langBtn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        langList.classList.toggle('hidden');
+        langBtn.setAttribute('aria-expanded', langList.classList.contains('hidden') ? 'false' : 'true');
+      });
+    }
+
+    document.querySelectorAll('#langList [data-lang]').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        setLang(el.dataset.lang);
+        langList.classList.add('hidden');
+        langBtn.setAttribute('aria-expanded','false');
+      });
+    });
+
+    document.addEventListener('click', (e)=>{
+      const menu = document.getElementById('langMenu');
+      if(menu && !menu.contains(e.target)) langList.classList.add('hidden');
+    });
+
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape') langList.classList.add('hidden');
+    });
+
+    // footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // fake form submit
+    const f = document.getElementById('contactForm');
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('formMsg').classList.remove('hidden');
+      this.reset();
+    });
   </script>
 </body>
 </html>
