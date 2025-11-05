@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>dminus – Sector‑Ready IT & Security</title>
+  <title>dMinus – Sector‑Ready IT & Security</title>
   <meta name="description" content="Secure, manageable and scalable IT for finance, manufacturing, retail, healthcare and households. VPN+RDP, AD, file sharing, backup.">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -16,7 +16,7 @@
   <div class="bg-slate-900/80 border-b border-slate-800 text-xs">
     <div class="container mx-auto px-4 py-2 flex items-center justify-between gap-3">
       <div class="flex items-center gap-4">
-        <a href="tel:01607739345" class="hover:text-blue-400">📞 01607739345</a>
+        <a href="tel:+491607739345" class="hover:text-blue-400">📞 +49 160 7739345</a>
         <a href="mailto:info@dminus.co" class="hover:text-blue-400">✉️ info@dminus.co</a>
       </div>
       <!-- was static: now i18n -->
@@ -30,14 +30,14 @@
       <a href="#home" class="font-semibold text-xl tracking-tight"><span class="text-white">dMinus</span></a>
       <nav class="hidden md:flex items-center gap-6 text-sm text-slate-200">
         <div class="relative" id="langMenu">
-          <button id="langBtn" class="text-xs border px-2 py-1 rounded hover:bg-gray-100 flex items-center gap-1" aria-haspopup="listbox" aria-expanded="false">
+          <button type="button" id="langBtn" class="text-xs border px-2 py-1 rounded hover:bg-slate-800 flex items-center gap-1" aria-haspopup="listbox" aria-expanded="false">
             <span id="langLabel">TR</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clip-rule="evenodd"/></svg>
           </button>
-          <div id="langList" class="absolute right-0 mt-2 w-32 rounded-md border border-slate-800 bg-slate-900/60 shadow-lg hidden">
-            <button data-lang="tr" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">Türkçe</button>
-            <button data-lang="de" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">Deutsch</button>
-            <button data-lang="en" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">English</button>
+          <div id="langList" role="listbox" class="absolute right-0 mt-2 w-32 rounded-md border border-slate-800 bg-slate-900/60 shadow-lg hidden">
+            <button type="button" role="option" data-lang="tr" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">Türkçe</button>
+            <button type="button" role="option" data-lang="de" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">Deutsch</button>
+            <button type="button" role="option" data-lang="en" class="block w-full text-left px-3 py-2 text-xs hover:bg-gradient-to-b from-slate-950 to-slate-950">English</button>
           </div>
         </div>
         <a href="#sectors" data-i18n="nav.sectors" class="hover:text-blue-400">Sektörler</a>
@@ -59,51 +59,14 @@
           <a href="#sectors" data-i18n="hero.btnSectors" class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700">Sektör Çözümleri</a>
           <a href="#services" data-i18n="hero.btnServices" class="inline-flex items-center justify-center rounded-xl border border-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-900/60">Tüm Hizmetler</a>
         </div>
-        <div class="mt-8 grid gap-4 md:gap-6">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 shadow-sm p-5 backdrop-blur">
-            <div class="font-medium text-base">🔒 <span data-i18n="hero.card1.t">Zero‑Trust VPN + RDP</span></div>
-            <p class="text-sm text-slate-300/80 mt-1" data-i18n="hero.card1.d">İnternete açık RDP yok. Tüm erişim MFA’lı VPN üzerinden.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 shadow-sm p-5 backdrop-blur">
-            <div class="font-medium text-base">🗂️ <span data-i18n="hero.card2.t">AD & Dosya Paylaşımı</span></div>
-            <p class="text-sm text-slate-300/80 mt-1" data-i18n="hero.card2.d">Kullanıcı izolasyonu, ortak ve kişisel alanlar, GPO ile denetim.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 shadow-sm p-5 backdrop-blur">
-            <div class="font-medium text-base">☁️ <span data-i18n="hero.card3.t">Yedekleme & Felaket Kurtarma</span></div>
-            <p class="text-sm text-slate-300/80 mt-1" data-i18n="hero.card3.d">NAS + bulut kopya, test restore ve kurtarma prosedürleri.</p>
-          </div>
-        </div>
-      </div>
+  </div>
       <div class="relative">
         <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWg2cjUyaWVpeDB2cWxxY2k4N2Z4OGhjcW9hemduOGQxaGI1M3g2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ITRemFlr5tS39AzQUL/giphy.gif" alt="IT Security" class="w-full h-[420px] md:h-[520px] object-cover rounded-2xl shadow-xl border border-slate-800/50" />
       </div>
-      </div>
     </div>
   </section>
 
-  <!-- METRICS / USP -->
-  <section class="bg-gradient-to-b from-slate-950 to-slate-950">
-    <div class="container mx-auto px-4 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
-        <div class="text-3xl font-bold text-white">10+</div>
-        <div class="text-slate-300/80 text-sm">Yıl tecrübe</div>
-      </div>
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
-        <div class="text-3xl font-bold text-white">250+</div>
-        <div class="text-slate-300/80 text-sm">Başarılı kurulum</div>
-      </div>
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
-        <div class="text-3xl font-bold text-white">24/7</div>
-        <div class="text-slate-300/80 text-sm">İzleme ve destek</div>
-      </div>
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 text-center">
-        <div class="text-3xl font-bold text-white">NIS2‑ready</div>
-        <div class="text-slate-300/80 text-sm">Uyum odaklı süreçler</div>
-      </div>
-    </div>
-  </section>
-
-  <section id=\"sectors\"" class="bg-gradient-to-b from-slate-950 to-slate-950 ">
+  <section id="sectors" class="bg-gradient-to-b from-slate-950 to-slate-950 ">
     <div class="container mx-auto px-4 py-12 md:py-14">
       <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="sectors.h">Sektörlere Özel Çözümler</h2>
       <p class="mt-2 text-slate-300/80" data-i18n="sectors.p">Her sektörün ihtiyacına uygun kurulum ve yönetim.</p>
@@ -151,11 +114,9 @@
   <!-- PRICING (left as EN static) -->
   <section id="pricing" class="bg-gradient-to-b from-slate-950 to-slate-950 ">
     <div class="container mx-auto px-4 py-14 text-center">
-      <h2 class="text-2xl md:text-3xl font-semibold">Best Prices Tailored to Your Industry</h2>
-      <p class="mt-2 text-slate-300/80 max-w-xl mx-auto">Every organization is different. We provide customized IT pricing aligned with your business size and security needs.</p>
-      <div class="mt-8 inline-flex items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/60 px-6 py-4 text-slate-100 font-medium shadow-sm">
-        Contact us for a tailored quote.
-      </div>
+      <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="pricing.h">Best Prices Tailored to Your Industry</h2>
+      <p class="mt-2 text-slate-300/80 max-w-xl mx-auto" data-i18n="pricing.p">Every organization is different. We provide customized IT pricing aligned with your business size and security needs.</p>
+      <div class="mt-8 inline-flex items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/60 px-6 py-4 text-slate-100 font-medium shadow-sm" data-i18n="pricing.cta">Contact us for a tailored quote.</div>
     </div>
   </section>
 
@@ -179,21 +140,16 @@
     <div class="container mx-auto px-4 py-12 md:py-14">
       <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="personal.h">Bireysel Kullanıcılara IT Hizmetleri</h2>
       <p class="mt-2 text-slate-300/80 max-w-prose" data-i18n="personal.p">Ev ve kişisel kullanım için profesyonel teknik destek.</p>
-      <div class="mt-6 grid md:grid-cols-2 gap-4 md:gap-6">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
-          <ul class="text-sm list-disc list-inside text-slate-200 space-y-1">
-            <li data-i18n="pers.b1">Bilgisayar kurulum ve performans optimizasyonu</li>
-            <li data-i18n="pers.b2">Veri yedekleme ve kurtarma</li>
-            <li data-i18n="pers.b3">Ev interneti ve Wi‑Fi yapılandırma</li>
-            <li data-i18n="pers.b4">Zararlı yazılım temizliği ve güvenlik</li>
-            <li data-i18n="pers.b5">Printer/NAS/akıllı cihaz entegrasyonu</li>
-            <li data-i18n="pers.b6">Uzaktan destek</li>
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 shadow-sm backdrop-blur hover:border-slate-700 transition">
-          <div class="font-semibold mb-1" data-i18n="personal.fast">⚡ Hızlı Yardım</div>
-          <p class="text-sm text-slate-200" data-i18n="personal.fastd">Çoğu sorun için aynı gün uzaktan destek sağlarız. Gerektiğinde yerinde servis verilir.</p>
-        </div>
+      <div class="mt-6">
+        <ul class="list-disc list-inside text-slate-200 space-y-2">
+          <li data-i18n="pers.b1">Bilgisayar kurulum ve performans optimizasyonu</li>
+          <li data-i18n="pers.b2">Veri yedekleme ve kurtarma</li>
+          <li data-i18n="pers.b3">Ev interneti ve Wi‑Fi yapılandırma</li>
+          <li data-i18n="pers.b4">Zararlı yazılım temizliği ve güvenlik</li>
+          <li data-i18n="pers.b5">Printer/NAS/akıllı cihaz entegrasyonu</li>
+          <li data-i18n="pers.b6">Uzaktan destek</li>
+        </ul>
+        <p class="mt-4 text-sm text-slate-300/80"><span class="font-medium" data-i18n="personal.fast">⚡ Hızlı Yardım</span> — <span data-i18n="personal.fastd">Çoğu sorun için aynı gün uzaktan destek sağlarız. Gerektiğinde yerinde servis verilir.</span></p>
       </div>
     </div>
   </section>
@@ -215,33 +171,26 @@
   <section id="contact">
     <div class="container mx-auto px-4 py-12 md:py-14">
       <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="contact.h">İletişim</h2>
-      <p class="mt-2 text-slate-300/80" data-i18n="contact.p">Bize ulaşın. 24 saat içinde dönüş yaparız.</p>
-      <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-sm md:col-span-2">
-          <form id="contactForm" class="grid gap-3">
-            <div class="grid md:grid-cols-2 gap-3">
-              <input required placeholder="Ad Soyad" data-i18n-placeholder="form.name" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
-              <input required type="email" placeholder="E‑posta" data-i18n-placeholder="form.email" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
-            </div>
-            <input placeholder="Konu" data-i18n-placeholder="form.subject" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
-            <textarea required placeholder="İhtiyacınızı kısaca anlatın" data-i18n-placeholder="form.msg" class="min-h-[120px] w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-            <div class="flex items-center justify-between">
-              
-              <button type="submit" data-i18n="form.send" class="rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700">Gönder</button>
-            </div>
-            <p id="formMsg" class="hidden text-sm text-green-600" data-i18n="form.thanks">Teşekkürler. Mesajınız alındı.</p>
-          </form>
+      
+      <div class="mt-6 md:mt-8 max-w-3xl">
+        <div class="text-slate-200 text-sm md:text-base mb-8">
+          <div class="font-semibold">dMinus</div>
+          <div>📞 +49 160 7739345</div>
+          <div>✉️ info@dminus.co</div>
+          <p class="mt-3 text-slate-300/80" data-i18n="contact.note">Frankfurt ve 50 km çevresine yol ücreti olmadan yerinde servis. Daha uzak mesafeler için yol ücreti ile on‑site hizmet. Uzaktan bağlantı ile çoğu sorunu aynı gün çözüyoruz.</p>
         </div>
-        <div class="grid gap-4 self-start">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-sm text-sm text-slate-200">
-            <div class="font-semibold mb-2">dminus IT</div>
-            <div>📞 01607739345</div>
-            <div class="mt-1">✉️ info@dminus.co</div>
+        <form id="contactForm" class="grid gap-3">
+          <div class="grid md:grid-cols-2 gap-3">
+            <input required placeholder="Ad Soyad" data-i18n-placeholder="form.name" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
+            <input required type="email" placeholder="E‑posta" data-i18n-placeholder="form.email" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
           </div>
-          <!-- was static: now i18n -->
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 shadow-sm text-sm text-slate-200" data-i18n="onsite.note">Frankfurt ve 50 km çevresine yol ücreti olmadan yerinde servis. Daha uzak mesafeler için ücretli on‑site ziyaret. Uzaktan bağlantı ile hızlı ve profesyonel çözüm sağlıyoruz.</div>
+          <input placeholder="Konu" data-i18n-placeholder="form.subject" class="w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400" />
+          <textarea required placeholder="İhtiyacınızı kısaca anlatın" data-i18n-placeholder="form.msg" class="min-h-[120px] w-full rounded-xl border border-slate-700 bg-slate-900/50 px-3 py-2 text-sm text-slate-200 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+          <div class="flex items-center justify-between">
+            <button type="submit" data-i18n="form.send" class="rounded-xl bg-blue-600 px-4 py-2 text-white text-sm font-medium hover:bg-blue-700">Gönder</button>
           </div>
-        </div>
+          <p id="formMsg" class="hidden text-sm text-green-600" data-i18n="form.thanks">Teşekkürler. Mesajınız alındı.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -249,15 +198,15 @@
   <!-- BOTTOM CONTACT STRIP -->
   <section class="border-t border-slate-800 bg-gradient-to-b from-slate-950 to-slate-950">
     <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-      <div class="font-medium">dminus • <span data-i18n="bottom.contact">İletişim</span></div>
-      <div class="text-slate-200">📞 01607739345 • ✉️ info@dminus.co</div>
+      <div class="font-medium">dMinus • <span data-i18n="bottom.contact">İletişim</span></div>
+      <div class="text-slate-200">📞 +49 160 7739345 • ✉️ info@dminus.co</div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-800">
     <div class="container mx-auto px-4 py-8 text-sm text-slate-300/80 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>© <span id="y"></span> dminus IT. <span data-i18n="rights">Tüm hakları saklıdır.</span></div>
+      <div>© <span id="y"></span> dMinus IT. <span data-i18n="rights">Tüm hakları saklıdır.</span></div>
       <div class="flex items-center gap-4">
         <a href="#home" class="hover:text-blue-400" data-i18n="nav.home">Anasayfa</a>
         <a href="#services" class="hover:text-blue-400" data-i18n="nav.services">Hizmetler</a>
@@ -298,7 +247,11 @@
         'cta.h':'İhtiyacınıza özel bir plan oluşturalım','cta.p':'Kısa bir keşif görüşmesi ile kapsamı netleştirip teklif hazırlıyoruz.','cta.btn':'İletişime geç',
         'contact.h':'İletişim','contact.p':'Bize ulaşın. 24 saat içinde dönüş yaparız.',
         'form.name':'Ad Soyad','form.email':'E‑posta','form.subject':'Konu','form.msg':'İhtiyacınızı kısaca anlatın','form.send':'Gönder','form.thanks':'Teşekkürler. Mesajınız alındı.',
-        'social':'Sosyal','bottom.contact':'İletişim','rights':'Tüm hakları saklıdır.'
+        'pricing.h':'Sektörünüze Özel Fiyatlar',
+        'pricing.p':'Her işletme farklıdır. Boyutunuza ve güvenlik ihtiyaçlarınıza uygun bir fiyatlama sunuyoruz.',
+        'pricing.cta':'İhtiyaca özel teklif için iletişime geçin.',
+        'social':'Sosyal','bottom.contact':'İletişim','rights':'Tüm hakları saklıdır.',
+        'contact.note':'Frankfurt ve 50 km çevresine yol ücreti olmadan yerinde servis. Daha uzak mesafeler için yol ücreti ile on‑site hizmet. Uzaktan bağlantı ile çoğu sorunu aynı gün çözüyoruz.'
       },
       de: {
         'nav.sectors':'Branchen','nav.services':'Leistungen','nav.personal':'Privat','nav.contact':'Kontakt','nav.home':'Startseite',
@@ -329,7 +282,11 @@
         'cta.h':'Lassen Sie uns einen passenden Plan erstellen','cta.p':'Kurzes Erstgespräch, dann erhalten Sie ein konkretes Angebot.','cta.btn':'Kontakt aufnehmen',
         'contact.h':'Kontakt','contact.p':'Schreiben Sie uns. Wir melden uns innerhalb von 24 Stunden.',
         'form.name':'Name','form.email':'E‑Mail','form.subject':'Betreff','form.msg':'Beschreiben Sie kurz Ihr Anliegen','form.send':'Senden','form.thanks':'Danke. Ihre Nachricht ist eingegangen.',
-        'social':'Sozial','bottom.contact':'Kontakt','rights':'Alle Rechte vorbehalten.'
+        'pricing.h':'Branchenspezifische Preise',
+        'pricing.p':'Jedes Unternehmen ist anders. Wir bieten Preise, die zu Ihrer Größe und Ihrem Sicherheitsbedarf passen.',
+        'pricing.cta':'Kontaktieren Sie uns für ein individuelles Angebot.',
+        'social':'Sozial','bottom.contact':'Kontakt','rights':'Alle Rechte vorbehalten.',
+        'contact.note':'Vor-Ort-Service im Raum Frankfurt bis 50 km ohne Anfahrtskosten. Darüber hinaus On‑Site‑Einsätze mit Anfahrtspauschale. Per Fernzugriff lösen wir die meisten Anliegen noch am selben Tag.'
       },
       en: {
         'nav.sectors':'Industries','nav.services':'Services','nav.personal':'Personal','nav.contact':'Contact','nav.home':'Home',
@@ -360,7 +317,11 @@
         'cta.h':'Let’s craft the right plan for you','cta.p':'We run a quick discovery call and send a tailored proposal.','cta.btn':'Get in touch',
         'contact.h':'Contact','contact.p':'Reach out and we will reply within 24 hours.',
         'form.name':'Full name','form.email':'Email','form.subject':'Subject','form.msg':'Briefly describe your needs','form.send':'Send','form.thanks':'Thanks. Your message has been received.',
-        'social':'Social','bottom.contact':'Contact','rights':'All rights reserved.'
+        'pricing.h':'Best Prices Tailored to Your Industry',
+        'pricing.p':'Every organization is different. We provide customized IT pricing aligned with your business size and security needs.',
+        'pricing.cta':'Contact us for a tailored quote.',
+        'social':'Social','bottom.contact':'Contact','rights':'All rights reserved.',
+        'contact.note':'On‑site service within 50 km of Frankfurt with no travel fee. Beyond that, on‑site visits include a travel fee. Most issues are resolved same‑day via secure remote support.'
       }
     };
 
