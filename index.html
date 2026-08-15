@@ -1,369 +1,73 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!doctype html>
+<html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>dMinus – Sector‑Ready IT & Security</title>
-  <meta name="description" content="Secure, managed, and resilient IT. Tailored to your industry. TR/EN/DE." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .container { max-width: 1120px; }
-    .card-shadow { box-shadow: 0 10px 25px rgba(2,6,23,0.35); }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>dMinus – Managed IT, IT-Sicherheit &amp; Business Research im Rhein-Main-Gebiet</title>
+  <meta name="description" content="dMinus ist Ihre externe IT-Abteilung im Rhein-Main-Gebiet: Managed IT, Microsoft 365, IT-Sicherheit, Backup, Infrastruktur und Business Research für KMU.">
+  <meta name="theme-color" content="#071016">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://dminus.co/">
+  <link rel="alternate" hreflang="de" href="https://dminus.co/">
+  <link rel="alternate" hreflang="tr" href="https://dminus.co/tr/">
+  <link rel="alternate" hreflang="en" href="https://dminus.co/en/">
+  <link rel="alternate" hreflang="x-default" href="https://dminus.co/">
+  <link rel="stylesheet" href="./styles.css">
 </head>
-<body class="bg-slate-950 text-slate-100">
-  <!-- Top bar -->
-  <header class="border-b border-slate-800/60 bg-slate-900/80 backdrop-blur">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <a href="#" class="text-xl tracking-tight font-semibold"><span class="text-sky-400">d</span>Minus</a>
-        <nav class="hidden md:flex items-center gap-5 text-sm text-slate-300">
-          <a href="#sectors" class="hover:text-white" data-i18n="nav.sectors">Sektörler</a>
-          <a href="#why" class="hover:text-white" data-i18n="nav.why">Neden Biz</a>
-          <a href="#contact" class="hover:text-white" data-i18n="nav.contact">İletişim</a>
-        </nav>
-      </div>
-      <div class="flex items-center gap-2">
-        <select id="lang" class="bg-slate-800/70 border border-slate-700 text-slate-200 text-sm px-2 py-1 rounded">
-          <option value="tr">TR</option>
-          <option value="de">DE</option>
-          <option value="en">EN</option>
-        </select>
-        <a href="#contact" class="hidden sm:inline-block bg-sky-500 hover:bg-sky-400 text-slate-950 font-medium text-sm px-3 py-2 rounded transition" data-i18n="cta.top">Ücretsiz analiz</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(56,189,248,0.08),transparent_60%)] pointer-events-none"></div>
-    <div class="container mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
-          <span data-i18n="hero.tr">Siz işinize bakın. Teknoloji bizde.</span>
-        </h1>
-        <p class="mt-4 text-slate-300 max-w-xl" data-i18n="hero.sub">
-          Güvenli, yönetilebilir ve kesintisiz IT altyapısı. İş sonuçlarına odaklanan kurulum ve işletim.
-        </p>
-        <div class="mt-6 flex items-center gap-3">
-          <a href="#contact" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold px-5 py-3 rounded-lg transition" data-i18n="cta.primary">İletişime geç</a>
-          <a href="#sectors" class="border border-slate-700 hover:border-slate-500 text-slate-200 px-5 py-3 rounded-lg transition" data-i18n="cta.secondary">Sektörünü seç</a>
-        </div>
-        <p class="mt-6 text-sm text-slate-400" data-i18n="hero.promise">
-          Altyapı ve destek: Sizinle birlikte seçilen paket. İhtiyacınıza özel kurulum. Bütçe planlaması şeffaf.
-        </p>
-      </div>
-      <!-- Realistic image placeholder -->
-      <div class="relative">
-        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDQ5MjB2b2dkaHcyaGwzZmJyOWFha2R3N281N2pjbTBybXppMWthdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ITRemFlr5tS39AzQUL/giphy.gif" alt="IT operations" class="rounded-xl ring-1 ring-slate-800 card-shadow" />
-        
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header">
+ <div class="container nav">
+   <a class="brand" href="./index.html"><span class="brand-mark">d−</span><span><span class="brand-name">dMinus</span><span class="brand-sub">IT · Security · Intelligence</span></span></a>
+   <nav class="navlinks" aria-label="Main navigation"><a href="#services">Leistungen</a><a href="#industries">Branchen</a><a href="#security">Security</a><a href="#research">Business Research</a><a href="#contact">Kontakt</a></nav>
+   <div class="actions">
+     <div class="langs"><a class="active" href="./index.html">DE</a><a class="" href="./tr/index.html">TR</a><a class="" href="./en/index.html">EN</a></div>
+     <a class="btn btn-primary" href="#contact">IT-Check anfragen</a>
+     <button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
+   </div>
+ </div>
+</header>
+<main id="main">
+<section class="hero">
+ <div class="container hero-grid">
+   <div>
+    <span class="eyebrow">Managed IT · Security · Business Intelligence</span>
+    <h1>Ihre externe <span class="accent">IT-Abteilung.</span></h1>
+    <p class="hero-lead">Wir betreiben, schützen und modernisieren die IT kleiner und mittelständischer Unternehmen – und liefern strukturierte Business-Recherche, wenn Entscheidungen belastbare Daten brauchen.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="#contact">Kostenlosen IT-Check anfragen</a><a class="btn btn-ghost" href="#services">Leistungen ansehen ↓</a></div>
+    <div class="trustline"><span><i></i>Rhein-Main · Remote + vor Ort</span><span><i></i>Klare Reaktionszeiten</span><span><i></i>Security by default</span></div>
+   </div>
+   <div class="hero-card">
+    <div class="dashboard">
+      <div class="dash-top"><span>dMinus / operations</span><span class="healthy">systems healthy</span></div>
+      <div class="dash-body">
+       <div class="metric-row"><div class="metric"><small>Endpoints</small><strong>42</strong></div><div class="metric"><small>Backups</small><strong>OK</strong></div><div class="metric"><small>Alerts</small><strong>02</strong></div></div>
+       <div class="activity"><div class="activity-title"><span>Recent activity</span><span>Live view</span></div><div class="event"><time>09:14</time><span class="ok">✓</span><span>Endpoint policy synced</span></div><div class="event"><time>09:27</time><span class="ok">✓</span><span>Backup verification completed</span></div><div class="event"><time>09:41</time><span class="info">→</span><span>Vendor research · candidates mapped</span></div><div class="event"><time>10:02</time><span class="ok">✓</span><span>Critical patches deployment ready</span></div></div>
+       <div class="research-panel"><div class="research-panel-head"><div><strong>Business Intelligence</strong><small>Company · Market · Supply Chain</small></div><span class="badge">RESEARCH</span></div><div class="chain"><div class="node"><span>Source</span><b>Producer</b></div><div class="node"><span>Layer 01</span><b>Trader</b></div><div class="node"><span>Layer 02</span><b>Distributor</b></div><div class="node"><span>Target</span><b>Buyer</b></div></div></div>
       </div>
     </div>
-  </section>
+   </div>
+ </div>
+ <div class="proofbar"><div class="container proofgrid"><div class="proof"><b>◎</b>Fester Ansprechpartner</div><div class="proof"><b>↗</b>Remote + Vor Ort</div><div class="proof"><b>✓</b>Dokumentierte Systeme</div><div class="proof"><b>◆</b>Security-first Betrieb</div></div></div>
+</section>
 
-  <!-- 3×3 Sector Grid -->
-  <section id="sectors" class="py-12 md:py-16 border-t border-slate-800/60">
-    <div class="container mx-auto px-4">
-      <div class="max-w-2xl">
-        <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="sectors.title">İşletmenize uygun çözümler</h2>
-        <p class="text-slate-400 mt-2" data-i18n="sectors.sub">Her sektörün dijital ihtiyacı farklıdır. Size en uygun olanı seçin.</p>
-      </div>
+<section class="section" id="services"><div class="container"><div class="section-head"><div><span class="kicker">Was wir übernehmen</span><h2>Zwei Disziplinen. Ein Ansprechpartner.</h2></div><p>Wir übernehmen Ihren IT-Betrieb – und unterstützen Geschäftsentscheidungen mit strukturierter Recherche aus zulässigen offenen Quellen.</p></div><div class="two-col">
+ <article class="pillar"><span class="pillar-no">01 / MANAGED IT</span><h3>IT, die einfach funktioniert.</h3><p>Arbeitsplätze, Microsoft 365, Server, Netzwerk, Backup und Security – als planbarer laufender Betrieb statt ständiger Feuerwehr.</p><div class="feature-list"><div>Managed IT &amp; Support</div><div>Microsoft 365</div><div>Server &amp; Netzwerk</div><div>Backup &amp; Recovery</div><div>Endpoint Security</div><div>Monitoring &amp; Patching</div><div>Vor-Ort-Service</div><div>Dokumentation</div></div><a class="pillar-link" href="#contact">IT-Betreuung besprechen <span>→</span></a></article>
+ <article class="pillar research"><span class="pillar-no">02 / BUSINESS INTELLIGENCE</span><h3>Daten, die Entscheidungen besser machen.</h3><p>Wir identifizieren relevante Unternehmen, Märkte, Geschäftspartner und Lieferketten und liefern strukturierte, nachvollziehbare Ergebnisse.</p><div class="feature-list"><div>Unternehmensrecherche</div><div>Markt- &amp; Wettbewerbsanalyse</div><div>Lieferantenrecherche</div><div>B2B Lead Research</div><div>Supply-Chain Mapping</div><div>Commercial Due Diligence</div><div>Data Enrichment</div><div>Custom Research</div></div><a class="pillar-link" href="#contact">Research besprechen <span>→</span></a></article>
+</div></div></section>
 
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Sector card template: link, image, overlay title -->
-        <a href="#sector-steuer" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop" alt="Steuerberater" class="h-56 w-full object-cover group-hover:scale-105 transition" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.steuer">Steuerberater / Mali Müşavir</h3>
-          </div>
-        </a>
+<section class="section alt" id="industries"><div class="container"><div class="section-head"><div><span class="kicker">Branchen</span><h2>IT-Betreuung mit Kontext.</h2></div><p>Technik allein reicht nicht. Wir richten Betrieb, Sicherheit und Support daran aus, wie Ihr Unternehmen tatsächlich arbeitet.</p></div><div class="industry-grid"><article class="industry"><div class="icon">§</div><small>Steuerberater</small><h3>Steuerkanzleien</h3><p>DATEV-Umfeld, Microsoft 365, sichere Arbeitsplätze, Backup, Rechte und Homeoffice.</p><a href="#contact">IT-Check anfragen →</a></article><article class="industry"><div class="icon">＋</div><small>Gesundheit</small><h3>Arztpraxen &amp; MVZ</h3><p>Praxisarbeitsplätze, Netzwerk, Backup, Ausfallsicherheit und Herstellerkoordination.</p><a href="#contact">IT-Check anfragen →</a></article><article class="industry"><div class="icon">¶</div><small>Recht</small><h3>Kanzleien</h3><p>Dokumente, E-Mail-Sicherheit, Remote Work, Zugriffsmanagement und Backup.</p><a href="#contact">IT-Check anfragen →</a></article><article class="industry"><div class="icon">↗</div><small>KMU</small><h3>Handwerk &amp; Mittelstand</h3><p>Büro, Lager, WLAN, Geräte, Microsoft 365, Benutzerverwaltung und Support.</p><a href="#contact">IT-Check anfragen →</a></article></div></div></section>
 
-        <a href="#sector-recht" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1600&auto=format&fit=crop" alt="Rechtsanwalt" class="h-56 w-full object-cover group-hover:scale-105 transition" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.recht">Rechtsanwalt / Avukat</h3>
-          </div>
-        </a>
+<section class="section" id="security"><div class="container security-layout"><div class="security-copy"><span class="kicker">Security by default</span><h2>Sicherheit ist kein Zusatzpaket.</h2><p>dMinus verbindet klassische IT-Betreuung mit Erfahrung aus professionellen Cybersecurity- und Incident-Response-Umgebungen. Sicherheitsgrundlagen gehören deshalb in den täglichen Betrieb – nicht erst nach dem ersten Vorfall.</p><div class="security-bullets"><div>MFA &amp; Identity</div><div>Endpoint Protection</div><div>Patch Management</div><div>Backup &amp; Recovery</div><div>Least Privilege</div><div>Incident Readiness</div></div></div><div class="security-visual"><div class="rings"><div class="shield-icon">✓</div></div><div class="security-caption">IDENTITY · ENDPOINT · BACKUP · RECOVERY</div></div></div></section>
 
-        <a href="#sector-handwerk" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop" alt="Handwerk" class="h-56 w-full object-cover group-hover:scale-105 transition" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.handwerk">Handwerk / Küçük İşletme</h3>
-          </div>
-        </a>
+<section class="section alt" id="research"><div class="container"><div class="section-head"><div><span class="kicker">Business Research &amp; Data Intelligence</span><h2>Vom offenen Web zur nutzbaren Geschäftsinformation.</h2></div><p>Wir definieren die Geschäftsfrage, recherchieren aus zulässigen offenen Quellen und liefern Ergebnisse strukturiert, nachvollziehbar und entscheidungsorientiert.</p></div><div class="research-layout"><article class="case"><span class="kicker">Beispielprojekt</span><h3>Wer kauft dieses Produkt wirklich?</h3><p>Wir mappen Hersteller, Zwischenhändler, Distributoren und potenzielle Endabnehmer und verdichten die Recherche zu einer belastbaren Arbeitsgrundlage.</p><div class="deliverables"><div class="deliverable"><span>Unternehmensliste</span><span>Excel / CSV</span></div><div class="deliverable"><span>Beziehungen &amp; Rollen</span><span>Mapping</span></div><div class="deliverable"><span>Quellen &amp; Nachweise</span><span>Links / Notes</span></div><div class="deliverable"><span>Priorisierte Targets</span><span>Shortlist</span></div></div></article><div class="research-stack"><article class="research-card"><span class="tag">Company Intelligence</span><h4>Unternehmensrecherche</h4><p>Unternehmen, Strukturen, Geschäftspartner und öffentlich verfügbare Firmendaten.</p></article><article class="research-card"><span class="tag">Market Intelligence</span><h4>Markt &amp; Wettbewerb</h4><p>Marktteilnehmer, Wettbewerber, Angebote, Preise und Positionierung.</p></article><article class="research-card"><span class="tag">Supply Chain</span><h4>Lieferketten</h4><p>Hersteller, Zwischenhändler, Distributoren, Lieferanten und mögliche Abnehmer.</p></article></div></div></div></section>
 
-        <a href="#sector-gesundheit" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Gesundheit" class="h-56 w-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null;this.src='https://dummyimage.com/1600x900/0b1220/ffffff&text=Healthcare';" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.gesundheit">Sağlık / Klinik & Muayene</h3>
-          </div>
-        </a>
+<section class="section"><div class="container"><div class="section-head"><div><span class="kicker">So arbeiten wir</span><h2>Klarer Scope. Saubere Übergabe.</h2></div><p>Ob IT-Betrieb oder Research-Projekt: Der Umfang wird vorher festgelegt, Ergebnisse werden dokumentiert und Zuständigkeiten bleiben nachvollziehbar.</p></div><div class="process"><div class="step"><b>01</b><h3>Verstehen</h3><p>Umgebung, Problem und Ziel gemeinsam eingrenzen.</p></div><div class="step"><b>02</b><h3>Planen</h3><p>Prioritäten, Umfang und Vorgehen transparent festlegen.</p></div><div class="step"><b>03</b><h3>Umsetzen</h3><p>Technisch sauber umsetzen oder Recherche strukturiert durchführen.</p></div><div class="step"><b>04</b><h3>Dokumentieren</h3><p>Ergebnis, Risiken und nächste Schritte nachvollziehbar übergeben.</p></div></div></div></section>
 
-        <a href="#sector-retail" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.pexels.com/photos/1884583/pexels-photo-1884583.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Retail" class="h-56 w-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null;this.src='https://dummyimage.com/1600x900/0b1220/ffffff&text=Retail';" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.retail">Perakende</h3>
-          </div>
-        </a>
-
-        <a href="#sector-produktion" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Produktion" class="h-56 w-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null;this.src='https://dummyimage.com/1600x900/0b1220/ffffff&text=Production';" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.produktion">Üretim / Fabrika / Depo</h3>
-          </div>
-        </a>
-
-        <a href="#sector-immobilien" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop" alt="Immobilien" class="h-56 w-full object-cover group-hover:scale-105 transition" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.immobilien">Immobilien / Hausverwaltung</h3>
-          </div>
-        </a>
-
-        <a href="#sector-beratung" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1600&auto=format&fit=crop" alt="Beratung" class="h-56 w-full object-cover group-hover:scale-105 transition" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.beratung">Beratung / Freelance</h3>
-          </div>
-        </a>
-
-        <a href="#sector-tailored" class="group relative rounded-xl overflow-hidden ring-1 ring-slate-800 card-shadow">
-          <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1600&auto=format&fit=crop" alt="Tailored" class="h-56 w-full object-cover group-hover:scale-105 transition" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-          <div class="absolute bottom-0 p-4">
-            <h3 class="text-lg font-semibold" data-i18n="sector.tailored">Tailored IT for your business</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Value / Why dMinus -->
-  <section id="why" class="py-14 md:py-20">
-    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-      <div class="order-2 md:order-1">
-        <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="why.title">Dijitali biz üstleniriz. Siz kazanmaya devam edin.</h2>
-        <ul class="mt-5 space-y-3 text-slate-300">
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>10+ yıl kurumsal IT deneyimi: Güvenlik, yönetim, operasyon.</span></li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>Sayısız proje teslimi: KOBİ'lerden büyük şirketlere kadar başarı hikayeleri.</span></li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>Saldırı sonrası hızlı toparlanma: İş sürekliliğiniz önceliğimiz.</span></li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>Tek noktadan sorumluluk: Yazılım, donanım, ağ ve güvenlik tek elde.</span></li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>Uluslararası güvenlik standartları: ISO ve DSGVO uyumlu yapılar.</span></li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>Sertifikalı uzmanlık: Microsoft ve siber güvenlik alanlarında gelişmiş yetkinlik.</span></li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>7/24 izleme ve destek: Sorun büyümeden çözüm.</span></li>
-          <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span><span>Proaktif bakım ve otomasyon: En az kesinti, maksimum verim.</span></li>
-        </ul>
-      </div>
-      <div class="order-1 md:order-2">
-        <img src="https://images.pexels.com/photos/4508751/pexels-photo-4508751.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Operations center" class="rounded-xl ring-1 ring-slate-800 card-shadow" />
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Contact -->
-  <section id="contact" class="py-14 md:py-20 border-t border-slate-800/60">
-    <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-semibold" data-i18n="contact.title">İhtiyacınızı belirleyip birlikte tasarlayalım</h2>
-        <p class="mt-2 text-slate-400" data-i18n="contact.sub">Formu doldurun. En kısa sürede sizinle iletişime geçeceğiz.</p>
-        <form class="mt-6 space-y-4">
-          <div>
-            <label class="block text-sm text-slate-300 mb-1" for="name" data-i18n="form.name">İsim</label>
-            <input id="name" type="text" class="w-full rounded-lg bg-slate-900 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-100 placeholder-slate-500" placeholder="Adınız" />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-300 mb-1" for="company" data-i18n="form.company">Şirket</label>
-            <input id="company" type="text" class="w-full rounded-lg bg-slate-900 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-100 placeholder-slate-500" placeholder="Şirket adınız" />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-300 mb-1" for="email" data-i18n="form.email">E-posta</label>
-            <input id="email" type="email" class="w-full rounded-lg bg-slate-900 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-100 placeholder-slate-500" placeholder="ornek@firma.de" />
-          </div>
-          <div>
-            <label class="block text-sm text-slate-300 mb-1" for="needs" data-i18n="form.needs">İhtiyaç</label>
-            <textarea id="needs" rows="5" class="w-full rounded-lg bg-slate-900 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500 text-slate-100 placeholder-slate-500" placeholder="Kısaca anlatın"></textarea>
-          </div>
-          <button type="button" class="bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold px-5 py-3 rounded-lg" data-i18n="form.send">Gönder</button>
-        </form>
-      </div>
-      <aside class="space-y-4">
-        <div class="rounded-xl border border-slate-800 p-5 bg-slate-900/40">
-          <h3 class="font-semibold" data-i18n="contact.info">Hızlı iletişim</h3>
-          <ul class="mt-3 text-slate-300 space-y-2 text-sm">
-            <li><span class="text-slate-400" data-i18n="contact.phone">Telefon</span>: <a href="tel:+4901623944142" class="hover:underline">+49 160 773 9345</a></li>
-            <li><span class="text-slate-400" data-i18n="contact.mail">E-posta</span>: <a href="mailto:info@dminus.co" class="hover:underline">info@dminus.co</a></li>
-            <li><span class="text-slate-400">Instagram</span>: <a href="https://instagram.com/dminus" class="hover:underline">@dminus</a></li>
-          </ul>
-        </div>
-        <div class="rounded-xl border border-slate-800 p-5 bg-slate-900/40">
-          <p class="text-sm text-slate-400" data-i18n="contact.note">Fiyat listesi yok. Çözümü sizinle birlikte belirliyoruz. Altyapınız için en uygun maliyetli tasarımı sunuyoruz.</p>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-slate-800/60 py-8">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
-      <div>
-        <span class="font-semibold text-slate-200"><span class="text-sky-400">d</span>Minus</span> · <span data-i18n="footer.tag">Güvenli ve yönetilebilir IT altyapıları</span>
-      </div>
-      <div class="flex items-center gap-5">
-        <a href="#" class="hover:text-slate-200" data-i18n="footer.impressum">Impressum</a>
-        <a href="#" class="hover:text-slate-200" data-i18n="footer.privacy">Datenschutz</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Language strings -->
-  <script>
-    const strings = {
-      tr: {
-        'nav.sectors': 'Sektörler',
-        'nav.why': 'Neden Biz',
-        'nav.contact': 'İletişim',
-        'cta.top': 'Ücretsiz analiz',
-        'hero.tr': 'Siz işinize bakın. Teknoloji bizde.',
-        'hero.sub': 'Güvenli, yönetilebilir ve kesintisiz IT altyapısı. İş sonuçlarına odaklanan kurulum ve işletim.',
-        'cta.primary': 'İletişime geç',
-        'cta.secondary': 'Sektörünü seç',
-        'hero.promise': 'Altyapı ve destek: Sizinle birlikte seçilen paket. İhtiyacınıza özel kurulum. Bütçe planlaması şeffaf.',
-        'sectors.title': 'İşletmenize uygun çözümler',
-        'sectors.sub': 'Her sektörün dijital ihtiyacı farklıdır. Size en uygun olanı seçin.',
-        'sector.steuer': 'Mali Müşavir',
-        'sector.recht': 'Avukatlık Büroları',
-        'sector.handwerk': 'Zanaat / Küçük İşletme',
-        'sector.gesundheit': 'Sağlık / Klinik & Muayene',
-        'sector.retail': 'Perakende',
-        'sector.produktion': 'Üretim / Fabrika / Depo',
-        'sector.immobilien': 'Emlak / Site Yönetimi',
-        'sector.beratung': 'Danışmanlık / Freelance',
-        'sector.tailored': 'İşinize özel çözümler',
-        'why.title': 'Dijitali biz üstleniriz. Siz işinizi yapmaya devam edin.',
-        'why.p1': '10+ Jahre Enterprise-IT: Sicherheit, Verwaltung, Betrieb.',
-        'why.p2': 'Erfolgreiche Projekte von KMU bis Enterprise.',
-        'why.p3': 'Schnelle Wiederherstellung nach Angriffen: Business Continuity zuerst.',
-        'why.p4': 'Alles aus einer Hand: Netzwerk, Geräte, Sicherheit, Support.',
-        'contact.title': 'İhtiyacınızı belirleyip birlikte tasarlayalım',
-        'contact.sub': 'Formu doldurun. En kısa sürede sizinle iletişime geçeceğiz.',
-        'form.name': 'İsim',
-        'form.company': 'Şirket',
-        'form.email': 'E-posta',
-        'form.needs': 'İhtiyaç',
-        'form.send': 'Gönder',
-        'contact.info': 'Hızlı iletişim',
-        'contact.phone': 'Telefon',
-        'contact.mail': 'E-posta',
-        'contact.note': 'Fiyat listesi yok. Çözümü sizinle birlikte belirliyoruz. Altyapınız için en uygun maliyetli tasarımı sunuyoruz.',
-        'footer.tag': 'Güvenli ve yönetilebilir IT altyapıları',
-        'footer.impressum': 'Impressum',
-        'footer.privacy': 'Datenschutz'
-      },
-      de: {
-        'nav.sectors': 'Branchen',
-        'nav.why': 'Warum wir',
-        'nav.contact': 'Kontakt',
-        'cta.top': 'Kostenlose Analyse',
-        'hero.tr': 'Konzentrieren Sie sich auf Ihr Geschäft. Wir kümmern uns um die Technik.',
-        'hero.sub': 'Sichere, verwaltbare und unterbrechungsfreie IT‑Infrastruktur. Umsetzung mit Geschäftsnutzen.',
-        'cta.primary': 'Kontakt aufnehmen',
-        'cta.secondary': 'Branche wählen',
-        'hero.promise': 'Infrastruktur und Support: Paket gemeinsam gewählt. Lösung maßgeschneidert. Budgetplanung transparent.',
-        'sectors.title': 'Lösungen für Ihr Unternehmen',
-        'sectors.sub': 'Jede Branche hat andere Anforderungen. Wählen Sie die passende Lösung.',
-        'sector.steuer': 'Steuerberater',
-        'sector.recht': 'Rechtsanwalt',
-        'sector.handwerk': 'Handwerk / KMU',
-        'sector.gesundheit': 'Gesundheit / Praxis',
-        'sector.retail': 'Handel / Retail',
-        'sector.produktion': 'Produktion / Werk / Lager',
-        'sector.immobilien': 'Immobilien / Hausverwaltung',
-        'sector.beratung': 'Beratung / Freelancer',
-        'sector.tailored': 'Maßgeschneiderte IT für Ihr Geschäft',
-        'why.title': 'Wir übernehmen die digitale Seite. Sie liefern Ergebnisse.',
-        'why.p1': 'Security by default: Verschlüsselung, Zugriffskontrolle, Angriffsprävention.',
-        'why.p2': 'Always-on Zugriff: Büro, Homeoffice, Außendienst.',
-        'why.p3': 'Recovery-first: schnelle Wiederherstellung nach Vorfällen.',
-        'why.p4': 'Paketwahl gemeinsam: Infrastruktur maßgeschneidert, Budget transparent.',
-        'contact.title': 'Erzählen Sie uns Ihren Bedarf – wir designen zusammen',
-        'contact.sub': 'Senden Sie das kurze Formular. Wir definieren die passende Lösung.',
-        'form.name': 'Name',
-        'form.company': 'Firma',
-        'form.email': 'E‑Mail',
-        'form.needs': 'Bedarf',
-        'form.send': 'Senden',
-        'contact.info': 'Schneller Kontakt',
-        'contact.phone': 'Telefon',
-        'contact.mail': 'E‑Mail',
-        'contact.note': 'Keine Preisliste. Wir definieren die Lösung gemeinsam und planen das Budget fair.',
-        'footer.tag': 'Sichere, verwaltbare IT‑Infrastruktur',
-        'footer.impressum': 'Impressum',
-        'footer.privacy': 'Datenschutz'
-      },
-      en: {
-        'nav.sectors': 'Sectors',
-        'nav.why': 'Why us',
-        'nav.contact': 'Contact',
-        'cta.top': 'Free assessment',
-        'hero.tr': 'Focus on your business. We handle the tech.',
-        'hero.sub': 'Secure, manageable, and always‑on IT infrastructure. Built for business outcomes.',
-        'cta.primary': 'Get in touch',
-        'cta.secondary': 'Choose your sector',
-        'hero.promise': 'Infrastructure and support: co‑selected package. Tailored build. Transparent budgeting.',
-        'sectors.title': 'Solutions for your business',
-        'sectors.sub': 'Each sector needs different things. Pick what fits you best.',
-        'sector.steuer': 'Tax Advisors',
-        'sector.recht': 'Law Firms',
-        'sector.handwerk': 'Trades / Small Business',
-        'sector.gesundheit': 'Healthcare / Practice',
-        'sector.retail': 'Retail',
-        'sector.produktion': 'Manufacturing / Factory / Warehouse',
-        'sector.immobilien': 'Real Estate / Property Mgmt',
-        'sector.beratung': 'Consulting / Freelance',
-        'sector.tailored': 'Tailored IT for your business',
-        'why.title': 'We own the digital workload. You keep delivering.',
-        'why.p1': 'Security by default: encryption, access control, attack prevention.',
-        'why.p2': 'Always‑on access: office, home, field.',
-        'why.p3': 'Recovery‑first: rapid post‑incident restore.',
-        'why.p4': 'Co‑select the package: bespoke infrastructure, transparent budgeting.',
-        'contact.title': 'Tell us your needs, we design together',
-        'contact.sub': 'Send the short form. We’ll define the right setup with you.',
-        'form.name': 'Name',
-        'form.company': 'Company',
-        'form.email': 'Email',
-        'form.needs': 'Needs',
-        'form.send': 'Send',
-        'contact.info': 'Quick contact',
-        'contact.phone': 'Phone',
-        'contact.mail': 'Email',
-        'contact.note': 'No price table. We co‑design and propose the most cost‑effective infrastructure for you.',
-        'footer.tag': 'Secure and manageable IT infrastructures',
-        'footer.impressum': 'Impressum',
-        'footer.privacy': 'Privacy'
-      }
-    };
-
-    function setLang(lang) {
-      document.documentElement.lang = lang;
-      const map = strings[lang] || strings.tr;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (map[key]) el.textContent = map[key];
-      });
-    }
-
-    document.getElementById('lang').addEventListener('change', (e) => setLang(e.target.value));
-    // init
-    setLang('tr');
-  </script>
-</body>
-</html>
+<section class="cta" id="contact"><div class="container"><div class="cta-box"><div class="cta-copy"><span class="kicker">Kostenloser Erstcheck</span><h2>Wo drückt es gerade?</h2><p>Ob IT-Betreuung, Security-Thema oder Business Research: Schildern Sie kurz die Ausgangslage. Wir melden uns mit einem konkreten nächsten Schritt.</p><div class="contact-direct"><a href="tel:+491607739345"><span>Telefon</span>+49 160 773 9345</a><a href="mailto:info@dminus.co"><span>E-Mail</span>info@dminus.co</a><a href="https://instagram.com/dminus"><span>Instagram</span>@dminus</a></div></div>
+<form class="form" id="lead-form"><div class="field"><label>Name</label><input required name="name" autocomplete="name"></div><div class="field"><label>Unternehmen</label><input name="company" autocomplete="organization"></div><div class="field"><label>E-Mail</label><input required type="email" name="email" autocomplete="email"></div><div class="field"><label>Telefon</label><input name="phone" autocomplete="tel"></div><div class="field full"><label>Thema</label><select name="topic"><option>Managed IT / Support</option><option>IT-Sicherheit</option><option>Microsoft 365 / Infrastruktur</option><option>Business Research</option><option>Sonstiges</option></select></div><div class="field full"><label>Kurz beschreiben</label><textarea name="message" required></textarea></div><button class="btn btn-primary" type="submit">Anfrage senden →</button><p class="form-note">Das Formular öffnet Ihr E-Mail-Programm. Für die produktive Website kann es später direkt an ein Backend angebunden werden.</p></form>
+</div></div></section>
+</main>
+<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="./index.html"><span class="brand-mark">d−</span><span><span class="brand-name">dMinus</span><span class="brand-sub">IT · Security · Intelligence</span></span></a><p>Managed IT, IT-Sicherheit und Business Research für Unternehmen im Rhein-Main-Gebiet.</p></div><div class="footer-col"><h4>Navigation</h4><a href="#services">Leistungen</a><a href="#industries">Branchen</a><a href="#security">Security</a><a href="#research">Business Research</a><a href="#contact">Kontakt</a></div><div class="footer-col"><h4>Kontakt</h4><a href="tel:+491607739345">+49 160 773 9345</a><a href="mailto:info@dminus.co">info@dminus.co</a><a href="https://instagram.com/dminus">@dminus</a></div></div><div class="footer-bottom"><span>© 2026 dMinus. Alle Rechte vorbehalten.</span><span>Impressum · Datenschutz</span></div></div></footer>
+<script src="./script.js"></script>
+</body></html>
