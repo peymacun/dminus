@@ -1,73 +1,23 @@
 <!doctype html>
-<html lang="de">
+<html lang="x-default">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>dMinus – Managed IT, IT-Sicherheit &amp; Business Research im Rhein-Main-Gebiet</title>
-  <meta name="description" content="dMinus ist Ihre externe IT-Abteilung im Rhein-Main-Gebiet: Managed IT, Microsoft 365, IT-Sicherheit, Backup, Infrastruktur und Business Research für KMU.">
-  <meta name="theme-color" content="#071016">
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://dminus.co/">
-  <link rel="alternate" hreflang="de" href="https://dminus.co/">
-  <link rel="alternate" hreflang="tr" href="https://dminus.co/tr/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>dMinus</title>
+  <link rel="alternate" hreflang="de" href="https://dminus.co/de/">
   <link rel="alternate" hreflang="en" href="https://dminus.co/en/">
+  <link rel="alternate" hreflang="tr" href="https://dminus.co/tr/">
   <link rel="alternate" hreflang="x-default" href="https://dminus.co/">
-  <link rel="stylesheet" href="./styles.css">
+  <script>
+  (() => {
+    const stored = localStorage.getItem("dminus-language");
+    const langs = navigator.languages || [navigator.language || "de"];
+    const primary = stored || (langs.find(x => /^tr\b/i.test(x)) ? "tr" :
+                              langs.find(x => /^en\b/i.test(x)) ? "en" : "de");
+    location.replace("/" + primary + "/");
+  })();
+  </script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="header">
- <div class="container nav">
-   <a class="brand" href="./index.html"><span class="brand-mark">d−</span><span><span class="brand-name">dMinus</span><span class="brand-sub">IT · Security · Intelligence</span></span></a>
-   <nav class="navlinks" aria-label="Main navigation"><a href="#services">Leistungen</a><a href="#industries">Branchen</a><a href="#security">Security</a><a href="#research">Business Research</a><a href="#contact">Kontakt</a></nav>
-   <div class="actions">
-     <div class="langs"><a class="active" href="./index.html">DE</a><a class="" href="./tr/index.html">TR</a><a class="" href="./en/index.html">EN</a></div>
-     <a class="btn btn-primary" href="#contact">IT-Check anfragen</a>
-     <button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
-   </div>
- </div>
-</header>
-<main id="main">
-<section class="hero">
- <div class="container hero-grid">
-   <div>
-    <span class="eyebrow">Managed IT · Security · Business Intelligence</span>
-    <h1>Ihre externe <span class="accent">IT-Abteilung.</span></h1>
-    <p class="hero-lead">Wir betreiben, schützen und modernisieren die IT kleiner und mittelständischer Unternehmen – und liefern strukturierte Business-Recherche, wenn Entscheidungen belastbare Daten brauchen.</p>
-    <div class="hero-actions"><a class="btn btn-primary" href="#contact">Kostenlosen IT-Check anfragen</a><a class="btn btn-ghost" href="#services">Leistungen ansehen ↓</a></div>
-    <div class="trustline"><span><i></i>Rhein-Main · Remote + vor Ort</span><span><i></i>Klare Reaktionszeiten</span><span><i></i>Security by default</span></div>
-   </div>
-   <div class="hero-card">
-    <div class="dashboard">
-      <div class="dash-top"><span>dMinus / operations</span><span class="healthy">systems healthy</span></div>
-      <div class="dash-body">
-       <div class="metric-row"><div class="metric"><small>Endpoints</small><strong>42</strong></div><div class="metric"><small>Backups</small><strong>OK</strong></div><div class="metric"><small>Alerts</small><strong>02</strong></div></div>
-       <div class="activity"><div class="activity-title"><span>Recent activity</span><span>Live view</span></div><div class="event"><time>09:14</time><span class="ok">✓</span><span>Endpoint policy synced</span></div><div class="event"><time>09:27</time><span class="ok">✓</span><span>Backup verification completed</span></div><div class="event"><time>09:41</time><span class="info">→</span><span>Vendor research · candidates mapped</span></div><div class="event"><time>10:02</time><span class="ok">✓</span><span>Critical patches deployment ready</span></div></div>
-       <div class="research-panel"><div class="research-panel-head"><div><strong>Business Intelligence</strong><small>Company · Market · Supply Chain</small></div><span class="badge">RESEARCH</span></div><div class="chain"><div class="node"><span>Source</span><b>Producer</b></div><div class="node"><span>Layer 01</span><b>Trader</b></div><div class="node"><span>Layer 02</span><b>Distributor</b></div><div class="node"><span>Target</span><b>Buyer</b></div></div></div>
-      </div>
-    </div>
-   </div>
- </div>
- <div class="proofbar"><div class="container proofgrid"><div class="proof"><b>◎</b>Fester Ansprechpartner</div><div class="proof"><b>↗</b>Remote + Vor Ort</div><div class="proof"><b>✓</b>Dokumentierte Systeme</div><div class="proof"><b>◆</b>Security-first Betrieb</div></div></div>
-</section>
-
-<section class="section" id="services"><div class="container"><div class="section-head"><div><span class="kicker">Was wir übernehmen</span><h2>Zwei Disziplinen. Ein Ansprechpartner.</h2></div><p>Wir übernehmen Ihren IT-Betrieb – und unterstützen Geschäftsentscheidungen mit strukturierter Recherche aus zulässigen offenen Quellen.</p></div><div class="two-col">
- <article class="pillar"><span class="pillar-no">01 / MANAGED IT</span><h3>IT, die einfach funktioniert.</h3><p>Arbeitsplätze, Microsoft 365, Server, Netzwerk, Backup und Security – als planbarer laufender Betrieb statt ständiger Feuerwehr.</p><div class="feature-list"><div>Managed IT &amp; Support</div><div>Microsoft 365</div><div>Server &amp; Netzwerk</div><div>Backup &amp; Recovery</div><div>Endpoint Security</div><div>Monitoring &amp; Patching</div><div>Vor-Ort-Service</div><div>Dokumentation</div></div><a class="pillar-link" href="#contact">IT-Betreuung besprechen <span>→</span></a></article>
- <article class="pillar research"><span class="pillar-no">02 / BUSINESS INTELLIGENCE</span><h3>Daten, die Entscheidungen besser machen.</h3><p>Wir identifizieren relevante Unternehmen, Märkte, Geschäftspartner und Lieferketten und liefern strukturierte, nachvollziehbare Ergebnisse.</p><div class="feature-list"><div>Unternehmensrecherche</div><div>Markt- &amp; Wettbewerbsanalyse</div><div>Lieferantenrecherche</div><div>B2B Lead Research</div><div>Supply-Chain Mapping</div><div>Commercial Due Diligence</div><div>Data Enrichment</div><div>Custom Research</div></div><a class="pillar-link" href="#contact">Research besprechen <span>→</span></a></article>
-</div></div></section>
-
-<section class="section alt" id="industries"><div class="container"><div class="section-head"><div><span class="kicker">Branchen</span><h2>IT-Betreuung mit Kontext.</h2></div><p>Technik allein reicht nicht. Wir richten Betrieb, Sicherheit und Support daran aus, wie Ihr Unternehmen tatsächlich arbeitet.</p></div><div class="industry-grid"><article class="industry"><div class="icon">§</div><small>Steuerberater</small><h3>Steuerkanzleien</h3><p>DATEV-Umfeld, Microsoft 365, sichere Arbeitsplätze, Backup, Rechte und Homeoffice.</p><a href="#contact">IT-Check anfragen →</a></article><article class="industry"><div class="icon">＋</div><small>Gesundheit</small><h3>Arztpraxen &amp; MVZ</h3><p>Praxisarbeitsplätze, Netzwerk, Backup, Ausfallsicherheit und Herstellerkoordination.</p><a href="#contact">IT-Check anfragen →</a></article><article class="industry"><div class="icon">¶</div><small>Recht</small><h3>Kanzleien</h3><p>Dokumente, E-Mail-Sicherheit, Remote Work, Zugriffsmanagement und Backup.</p><a href="#contact">IT-Check anfragen →</a></article><article class="industry"><div class="icon">↗</div><small>KMU</small><h3>Handwerk &amp; Mittelstand</h3><p>Büro, Lager, WLAN, Geräte, Microsoft 365, Benutzerverwaltung und Support.</p><a href="#contact">IT-Check anfragen →</a></article></div></div></section>
-
-<section class="section" id="security"><div class="container security-layout"><div class="security-copy"><span class="kicker">Security by default</span><h2>Sicherheit ist kein Zusatzpaket.</h2><p>dMinus verbindet klassische IT-Betreuung mit Erfahrung aus professionellen Cybersecurity- und Incident-Response-Umgebungen. Sicherheitsgrundlagen gehören deshalb in den täglichen Betrieb – nicht erst nach dem ersten Vorfall.</p><div class="security-bullets"><div>MFA &amp; Identity</div><div>Endpoint Protection</div><div>Patch Management</div><div>Backup &amp; Recovery</div><div>Least Privilege</div><div>Incident Readiness</div></div></div><div class="security-visual"><div class="rings"><div class="shield-icon">✓</div></div><div class="security-caption">IDENTITY · ENDPOINT · BACKUP · RECOVERY</div></div></div></section>
-
-<section class="section alt" id="research"><div class="container"><div class="section-head"><div><span class="kicker">Business Research &amp; Data Intelligence</span><h2>Vom offenen Web zur nutzbaren Geschäftsinformation.</h2></div><p>Wir definieren die Geschäftsfrage, recherchieren aus zulässigen offenen Quellen und liefern Ergebnisse strukturiert, nachvollziehbar und entscheidungsorientiert.</p></div><div class="research-layout"><article class="case"><span class="kicker">Beispielprojekt</span><h3>Wer kauft dieses Produkt wirklich?</h3><p>Wir mappen Hersteller, Zwischenhändler, Distributoren und potenzielle Endabnehmer und verdichten die Recherche zu einer belastbaren Arbeitsgrundlage.</p><div class="deliverables"><div class="deliverable"><span>Unternehmensliste</span><span>Excel / CSV</span></div><div class="deliverable"><span>Beziehungen &amp; Rollen</span><span>Mapping</span></div><div class="deliverable"><span>Quellen &amp; Nachweise</span><span>Links / Notes</span></div><div class="deliverable"><span>Priorisierte Targets</span><span>Shortlist</span></div></div></article><div class="research-stack"><article class="research-card"><span class="tag">Company Intelligence</span><h4>Unternehmensrecherche</h4><p>Unternehmen, Strukturen, Geschäftspartner und öffentlich verfügbare Firmendaten.</p></article><article class="research-card"><span class="tag">Market Intelligence</span><h4>Markt &amp; Wettbewerb</h4><p>Marktteilnehmer, Wettbewerber, Angebote, Preise und Positionierung.</p></article><article class="research-card"><span class="tag">Supply Chain</span><h4>Lieferketten</h4><p>Hersteller, Zwischenhändler, Distributoren, Lieferanten und mögliche Abnehmer.</p></article></div></div></div></section>
-
-<section class="section"><div class="container"><div class="section-head"><div><span class="kicker">So arbeiten wir</span><h2>Klarer Scope. Saubere Übergabe.</h2></div><p>Ob IT-Betrieb oder Research-Projekt: Der Umfang wird vorher festgelegt, Ergebnisse werden dokumentiert und Zuständigkeiten bleiben nachvollziehbar.</p></div><div class="process"><div class="step"><b>01</b><h3>Verstehen</h3><p>Umgebung, Problem und Ziel gemeinsam eingrenzen.</p></div><div class="step"><b>02</b><h3>Planen</h3><p>Prioritäten, Umfang und Vorgehen transparent festlegen.</p></div><div class="step"><b>03</b><h3>Umsetzen</h3><p>Technisch sauber umsetzen oder Recherche strukturiert durchführen.</p></div><div class="step"><b>04</b><h3>Dokumentieren</h3><p>Ergebnis, Risiken und nächste Schritte nachvollziehbar übergeben.</p></div></div></div></section>
-
-<section class="cta" id="contact"><div class="container"><div class="cta-box"><div class="cta-copy"><span class="kicker">Kostenloser Erstcheck</span><h2>Wo drückt es gerade?</h2><p>Ob IT-Betreuung, Security-Thema oder Business Research: Schildern Sie kurz die Ausgangslage. Wir melden uns mit einem konkreten nächsten Schritt.</p><div class="contact-direct"><a href="tel:+491607739345"><span>Telefon</span>+49 160 773 9345</a><a href="mailto:info@dminus.co"><span>E-Mail</span>info@dminus.co</a><a href="https://instagram.com/dminus"><span>Instagram</span>@dminus</a></div></div>
-<form class="form" id="lead-form"><div class="field"><label>Name</label><input required name="name" autocomplete="name"></div><div class="field"><label>Unternehmen</label><input name="company" autocomplete="organization"></div><div class="field"><label>E-Mail</label><input required type="email" name="email" autocomplete="email"></div><div class="field"><label>Telefon</label><input name="phone" autocomplete="tel"></div><div class="field full"><label>Thema</label><select name="topic"><option>Managed IT / Support</option><option>IT-Sicherheit</option><option>Microsoft 365 / Infrastruktur</option><option>Business Research</option><option>Sonstiges</option></select></div><div class="field full"><label>Kurz beschreiben</label><textarea name="message" required></textarea></div><button class="btn btn-primary" type="submit">Anfrage senden →</button><p class="form-note">Das Formular öffnet Ihr E-Mail-Programm. Für die produktive Website kann es später direkt an ein Backend angebunden werden.</p></form>
-</div></div></section>
-</main>
-<footer><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="./index.html"><span class="brand-mark">d−</span><span><span class="brand-name">dMinus</span><span class="brand-sub">IT · Security · Intelligence</span></span></a><p>Managed IT, IT-Sicherheit und Business Research für Unternehmen im Rhein-Main-Gebiet.</p></div><div class="footer-col"><h4>Navigation</h4><a href="#services">Leistungen</a><a href="#industries">Branchen</a><a href="#security">Security</a><a href="#research">Business Research</a><a href="#contact">Kontakt</a></div><div class="footer-col"><h4>Kontakt</h4><a href="tel:+491607739345">+49 160 773 9345</a><a href="mailto:info@dminus.co">info@dminus.co</a><a href="https://instagram.com/dminus">@dminus</a></div></div><div class="footer-bottom"><span>© 2026 dMinus. Alle Rechte vorbehalten.</span><span>Impressum · Datenschutz</span></div></div></footer>
-<script src="./script.js"></script>
-</body></html>
+<body></body>
+</html>
