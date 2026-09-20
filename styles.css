@@ -714,7 +714,8 @@ textarea.field {
 @media (max-width: 720px) {
   .container { width: min(calc(100% - 30px), var(--container)); }
   .nav { min-height: 66px; gap: 12px; }
-  .language-switch { display: none; }
+  .nav-actions > .language-switch { display: none; }
+  .mobile-panel .language-switch { display: flex; gap: 18px; }
   .hero { padding: 52px 0 38px; }
   .hero-grid { gap: 35px; }
   .hero-copy h1 { font-size: clamp(48px, 15vw, 68px); }
@@ -751,4 +752,40 @@ textarea.field {
   .diagram { transform: scale(.83); }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-brand { grid-column: auto; }
+}
+
+/* dMinus V5: services, consultation, company and accessible forms */
+.service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:36px; }
+.service-card { padding:27px; border:1px solid var(--line); background:var(--surface); border-radius:var(--radius); scroll-margin-top:110px; display:flex; flex-direction:column; }
+.service-card h3 { font-size:22px; line-height:1.2; margin:0 0 12px; }
+.service-card p { font-size:15px; color:var(--muted); margin:0 0 18px; }
+.service-card .text-link { margin-top:auto; font-size:13px; font-weight:750; }
+.service-card .text-link:hover { text-decoration:underline; }
+.step-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:32px; }
+.step-card { padding:28px; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); font-weight:700; }
+.section-cta { margin-top:28px; }
+.narrow { max-width:900px; }
+.scope-note { background:var(--surface-soft); border-left:3px solid var(--accent); padding:17px 20px; margin-top:28px; color:var(--text); }
+.faq-list { border-top:1px solid var(--line); margin-top:35px; }
+.faq-list details { border-bottom:1px solid var(--line); padding:19px 5px; }
+.faq-list summary { cursor:pointer; font-size:18px; font-weight:700; }
+.faq-list details p { margin:12px 0 2px; color:var(--muted); }
+.honeypot { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.form-status { margin:15px 0 0; font-size:14px; font-weight:650; }
+.form-status:empty { display:none; }
+.form-status[data-state="error"] { color:#b23925; }
+html[data-theme="dark"] .form-status[data-state="error"] { color:#ff9d8b; }
+.contact-form button:disabled { opacity:.6; cursor:wait; }
+.form-note a { text-decoration:underline; text-underline-offset:2px; }
+:where(a,button,input,textarea,summary):focus-visible { outline:3px solid var(--text); outline-offset:3px; }
+html { scroll-padding-top:90px; }
+.section, .service-card { scroll-margin-top:90px; }
+/* darker interactive green on light backgrounds; primary button keeps vivid brand accent */
+:root { --accent-strong:#456600; }
+html[data-theme="dark"] { --accent-strong:#c1ef24; }
+@media(max-width:1050px) { .service-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:720px) { .service-grid,.step-grid { grid-template-columns:1fr; } }
+@media(prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto; }
+ *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }
