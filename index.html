@@ -1,23 +1,30 @@
 <!doctype html>
-<html lang="x-default">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>dMinus</title>
+  <title>dMinus | IT für Unternehmen im Rhein-Main-Gebiet</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate" hreflang="de" href="https://dminus.co/de/">
   <link rel="alternate" hreflang="en" href="https://dminus.co/en/">
   <link rel="alternate" hreflang="tr" href="https://dminus.co/tr/">
   <link rel="alternate" hreflang="x-default" href="https://dminus.co/">
   <script>
   (() => {
-    const stored = localStorage.getItem("dminus-language");
+    let stored = null;
+    try { stored = localStorage.getItem("dminus-language"); } catch {}
     const langs = navigator.languages || [navigator.language || "de"];
-    const primary = stored || (langs.find(x => /^tr\b/i.test(x)) ? "tr" :
-                              langs.find(x => /^en\b/i.test(x)) ? "en" : "de");
-    location.replace("/" + primary + "/");
+    const preferred = langs.map(l => l.split("-")[0].toLowerCase()).find(l => ["de","en","tr"].includes(l)) || "de";
+    location.replace("/" + (["de","en","tr"].includes(stored) ? stored : preferred) + "/");
   })();
   </script>
 </head>
-<body></body>
+<body>
+  <main>
+    <h1>dMinus</h1>
+    <p>Choose your language / Sprache wählen / Dil seçin:</p>
+    <nav><a href="/de/">Deutsch</a> · <a href="/en/">English</a> · <a href="/tr/">Türkçe</a></nav>
+  </main>
+</body>
 </html>
