@@ -15,6 +15,7 @@
   <meta property="og:description" content="Rhein-Main bölgesindeki şirketler için Yönetilen IT, Güvenlik ve İş Zekâsı hizmetleri.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dminus.co/tr/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
   <script>
     (() => {
@@ -23,12 +24,13 @@
       document.documentElement.dataset.theme = t || (dark ? "dark" : "light");
     })();
   </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"dMinus","url":"https://dminus.co/tr/","email":"info@dminus.co","telephone":"+491607739345","areaServed":{"@type":"Place","name":"Rhine-Main region, Germany"},"availableLanguage":["de","en","tr"]}</script>
 </head>
 <body>
 <header class="site-header">
   <div class="container nav">
     <a class="logo" href="/tr/" aria-label="dMinus home">dMinus<span class="logo-dot">.</span></a>
-    <nav class="nav-links"><a href='#industries'>Hizmetler</a><a href='#security'>Güvenlik</a><a href='#intelligence'>Business Intelligence</a><a href='#industries'>Sektörler</a><a href='#contact'>Şirket</a></nav>
+    <nav class="nav-links"><a href='#services'>Hizmetler</a><a href='#security'>Güvenlik</a><a href='#intelligence'>Business Intelligence</a><a href='#industries'>Sektörler</a><a href='#about'>DMinus Hakkında</a></nav>
     <div class="nav-actions">
       <div class="language-switch"><a data-lang-link data-lang='de' class='' href='/de/'>DE</a><a data-lang-link data-lang='en' class='' href='/en/'>EN</a><a data-lang-link data-lang='tr' class='active' href='/tr/'>TR</a></div>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle light and dark mode">
@@ -36,13 +38,13 @@
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 15a8 8 0 0 1-11-11 8.5 8.5 0 1 0 11 11Z"/></svg>
       </button>
       <a class="btn btn-primary btn-small desktop-cta" href="#contact">IT analizi planla</a>
-      <button class="mobile-toggle" type="button" data-mobile-menu aria-expanded="false" aria-label="Open menu">
+      <button class="mobile-toggle" type="button" data-mobile-menu aria-expanded="false" aria-label="Menüyü aç" data-open-label="Menüyü aç" data-close-label="Menüyü kapat">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
   <div class="mobile-panel" data-mobile-panel>
-    <nav><a href='#industries'>Hizmetler</a><a href='#security'>Güvenlik</a><a href='#intelligence'>Business Intelligence</a><a href='#industries'>Sektörler</a><a href='#contact'>Şirket</a><div class="language-switch"><a data-lang-link data-lang='de' class='' href='/de/'>DE</a><a data-lang-link data-lang='en' class='' href='/en/'>EN</a><a data-lang-link data-lang='tr' class='active' href='/tr/'>TR</a></div></nav>
+    <nav><a href='#services'>Hizmetler</a><a href='#security'>Güvenlik</a><a href='#intelligence'>Business Intelligence</a><a href='#industries'>Sektörler</a><a href='#about'>DMinus Hakkında</a><div class="language-switch"><a data-lang-link data-lang='de' class='' href='/de/'>DE</a><a data-lang-link data-lang='en' class='' href='/en/'>EN</a><a data-lang-link data-lang='tr' class='active' href='/tr/'>TR</a></div></nav>
   </div>
 </header>
 
@@ -81,6 +83,7 @@
   </div>
 </section>
 
+<section class="section service-section" id="services"><div class="container"><div class="section-kicker">dMinus IT</div><h2 class="section-heading">Neler yapıyoruz?</h2><div class="service-grid"><article class="service-card"><h3>Yönetilen IT & Destek</h3><p>Anlaşılan kapsamda cihaz ve kullanıcı yönetimi, bakım, onboarding ve günlük destek.</p><a class="text-link" href="#contact">Bilgi al →</a></article><article class="service-card"><h3>Microsoft 365 & Bulut</h3><p>Kurulum, geçiş, Entra ID, yetkilendirme ve Microsoft 365 yönetimi.</p><a class="text-link" href="#contact">Bilgi al →</a></article><article class="service-card"><h3>Ağ & Altyapı</h3><p>Ofis ağı, firewall, güvenli uzaktan erişim, Wi-Fi, sunucu ve sanallaştırma.</p><a class="text-link" href="#contact">Bilgi al →</a></article><article class="service-card" id="security"><h3>Güvenlik & Hazırlık</h3><p>Erişim kontrolleri, MFA, hardening, loglama ve somut güvenlik değerlendirmeleri.</p><a class="text-link" href="#contact">Bilgi al →</a></article><article class="service-card"><h3>Yedekleme & Kurtarma</h3><p>Yedekleme tasarımı, izleme, geri yükleme testleri ve kurtarma planlaması. Gerektiğinde geri yükleyebilmek esastır.</p><a class="text-link" href="#contact">Bilgi al →</a></article><article class="service-card"><h3>IT Projeleri</h3><p>Ofis taşınması, altyapı yenileme ve kapsamı belirlenmiş kurulum projeleri.</p><a class="text-link" href="#contact">Bilgi al →</a></article></div></div></section>
 <section class="section industries" id="industries">
   <div class="container">
     <div class="centered">
@@ -92,25 +95,25 @@
           <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2m4 0h2M8 15h2m4 0h2M8 19h2m4 0h2"/></svg></div>
           <h3>Mali Müşavirler &<br>Vergi Büroları</h3>
           <ul class="check-list"><li><span class='check'>✓</span><span>DATEV & çalışma ortamı</span></li><li><span class='check'>✓</span><span>Güvenli müşteri verileri</span></li><li><span class='check'>✓</span><span>Evden & mobil çalışma</span></li><li><span class='check'>✓</span><span>İhtiyaç anında destek</span></li></ul>
-          <a class="card-link" href="#contact"><span>Detayları gör</span><span class="arrow">→</span></a>
+          <a class="card-link" href="#services"><span>Detayları gör</span><span class="arrow">→</span></a>
         </article>
         <article class="industry-card">
           <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.7A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/><path d="M12 8v6m-3-3h6"/></svg></div>
           <h3>Muayenehaneler &<br>Klinikler</h3>
           <ul class="check-list"><li><span class='check'>✓</span><span>Kesintisiz klinik IT</span></li><li><span class='check'>✓</span><span>Güvenli hasta verileri</span></li><li><span class='check'>✓</span><span>Yedekleme & kurtarma</span></li><li><span class='check'>✓</span><span>Ağ & Wi-Fi</span></li><li><span class='check'>✓</span><span>Üretici / tedarikçi koordinasyonu</span></li></ul>
-          <a class="card-link" href="#contact"><span>Detayları gör</span><span class="arrow">→</span></a>
+          <a class="card-link" href="#services"><span>Detayları gör</span><span class="arrow">→</span></a>
         </article>
         <article class="industry-card">
           <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 4v16M5 7h14M7 7l-3 6h6L7 7Zm10 0-3 6h6l-3-6ZM8 20h8"/></svg></div>
           <h3>Avukatlar &<br>Hukuk Büroları</h3>
           <ul class="check-list"><li><span class='check'>✓</span><span>Gizli iletişim</span></li><li><span class='check'>✓</span><span>Microsoft 365 & e-posta</span></li><li><span class='check'>✓</span><span>Doküman & erişim yönetimi</span></li><li><span class='check'>✓</span><span>Ofisten ve uzaktan güvenli çalışma</span></li><li><span class='check'>✓</span><span>Yedekleme & iş sürekliliği</span></li></ul>
-          <a class="card-link" href="#contact"><span>Detayları gör</span><span class="arrow">→</span></a>
+          <a class="card-link" href="#services"><span>Detayları gör</span><span class="arrow">→</span></a>
         </article>
         <article class="industry-card">
           <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l6 3V8l6 4V5h3l3 16H3Z"/><path d="M7 17h2m3 0h2m3 0h2"/></svg></div>
           <h3>Üretim &<br>Sanayi</h3>
           <ul class="check-list"><li><span class='check'>✓</span><span>Ağ & lokasyon bağlantıları</span></li><li><span class='check'>✓</span><span>Bilgisayarlar & üretim sistemleri</span></li><li><span class='check'>✓</span><span>Depo & işletme Wi-Fi</span></li><li><span class='check'>✓</span><span>Yedekleme & iş sürekliliği</span></li><li><span class='check'>✓</span><span>IT güvenliği</span></li></ul>
-          <a class="card-link" href="#contact"><span>Detayları gör</span><span class="arrow">→</span></a>
+          <a class="card-link" href="#services"><span>Detayları gör</span><span class="arrow">→</span></a>
         </article></div>
 
     <div class="tailored">
@@ -128,7 +131,7 @@
       <div class="tailored-tags"><span>Danışmanlık</span><span>Emlak</span><span>Perakende</span><span>Lojistik</span><span>Dernekler</span><span>Eğitim</span><span>Gastronomi</span><span>Özel Sistemler</span></div>
     </div>
 
-    <div class="value-strip" id="security"><div class="value-item"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg><div><h4>Güvenlik varsayılan gelir.</h4><p>Güvenlik bizde ek paket değil; düzgün işletilen bir IT ortamının doğal parçasıdır.</p><a href="#contact">Güvenliği incele →</a></div></div><div class="value-item"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><div><h4>Cevaba mı ihtiyacınız var?</h4><p>Şirketler, pazarlar ve tedarik zincirleri hakkında karar vermenizi kolaylaştıran araştırmalar sunuyoruz.</p><a href="#contact">Business Intelligence →</a></div></div><div class="value-item"><svg viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><path d="M4 13h3v6H5a1 1 0 0 1-1-1v-5Zm16 0h-3v6h2a1 1 0 0 0 1-1v-5ZM17 19c0 2-2 2-4 2"/></svg><div><h4>Tek muhatap.</h4><p>Call center labirenti yok. Şirketinizi ve sisteminizi bilen insanlarla konuşursunuz.</p><a href="#contact">Bizimle konuş →</a></div></div></div>
+    <div class="value-strip"><div class="value-item"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg><div><h4>Güvenlik varsayılan gelir.</h4><p>Güvenlik bizde ek paket değil; düzgün işletilen bir IT ortamının doğal parçasıdır.</p><a href="#contact">Güvenliği incele →</a></div></div><div class="value-item"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><div><h4>Cevaba mı ihtiyacınız var?</h4><p>Şirketler, pazarlar ve tedarik zincirleri hakkında karar vermenizi kolaylaştıran araştırmalar sunuyoruz.</p><a href="#contact">Business Intelligence →</a></div></div><div class="value-item"><svg viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2"/><path d="M4 13h3v6H5a1 1 0 0 1-1-1v-5Zm16 0h-3v6h2a1 1 0 0 0 1-1v-5ZM17 19c0 2-2 2-4 2"/></svg><div><h4>Tek muhatap.</h4><p>Call center labirenti yok. Şirketinizi ve sisteminizi bilen insanlarla konuşursunuz.</p><a href="#contact">Bizimle konuş →</a></div></div></div>
   </div>
 </section>
 
@@ -146,6 +149,8 @@
   </div>
 </section>
 
+<section class="section" id="it-check"><div class="container"><div class="section-kicker">IT Check</div><h2 class="section-heading">IT analizi nasıl işler?</h2><p class="section-subtitle">Önce sistemlerinizi ve sorunlarınızı kısa bir görüşmede konuşuruz. Teknik değerlendirme veya ücretli uygulama ayrıca kapsamlandırılır.</p><div class="step-grid"><div class="step-card">İhtiyacınızı anlatın</div><div class="step-card">Altyapıyı görüşelim</div><div class="step-card">Sonraki adımları belirleyelim</div></div><a class="btn btn-primary section-cta" href="#contact">Görüşme planla →</a></div></section>
+<section class="section" id="about"><div class="container narrow"><div class="section-kicker">dMinus</div><h2 class="section-heading">Deneyimli IT, doğrudan destek.</h2><p class="section-subtitle">dMinus; IT operasyonları, siber olay müdahalesi ve felaket kurtarma alanlarındaki deneyimi küçük ve orta ölçekli işletmelere taşır. İş sürekliliği ve açık iletişime odaklanır.</p><p class="scope-note">Hizmet kapsamı, destek saatleri ve yanıt süreleri ayrıca kararlaştırılır. 7/24 hizmet taahhüt edilmez.</p></div></section><section class="section" id="faq"><div class="container narrow"><h2 class="section-heading">Sık sorulan sorular</h2><div class="faq-list"><details><summary>Yerinde destek veriyor musunuz?</summary><p>Rhein-Main bölgesinde projeye ve müsaitliğe göre yerinde çalışma planlanabilir.</p></details><details><summary>7/24 destek veriyor musunuz?</summary><p>7/24 destek taahhüt edilmiyor. Destek ve yanıt süreleri yazılı olarak belirlenir.</p></details><details><summary>Yedeklerimizi test edebilir misiniz?</summary><p>Sisteminiz için geri yükleme testi ve kurtarma değerlendirmesi kapsamını belirleyebiliriz.</p></details><details><summary>Aylık sözleşme zorunlu mu?</summary><p>Hayır. Tek seferlik IT projeleri veya değerlendirmeleri ayrı planlanabilir.</p></details></div></div></section>
 <section class="section" id="contact">
   <div class="container contact-grid">
     <div class="contact-copy">
@@ -156,19 +161,19 @@
         <a href="mailto:info@dminus.co">info@dminus.co</a>
       </div>
     </div>
-    <form class="contact-form" data-contact-form>
-      <div class="form-grid">
-        <input class="field" name="name" placeholder="İsim" required>
-        <input class="field" name="company" placeholder="Şirket">
-        <input class="field" name="email" type="email" placeholder="E-posta" required>
-        <input class="field" name="phone" type="tel" placeholder="Telefon">
-        <textarea class="field" name="message" placeholder="Mesajınız" required></textarea>
+    <form class="contact-form" data-contact-form method="post" action="/api/contact">
+      <div class="form-grid"><div class="honeypot" aria-hidden="true"><label for="website-field">Leave empty</label><input id="website-field" name="website" tabindex="-1" autocomplete="off"></div>
+        <input class="field" id="contact-name" aria-label="name" maxlength="120" name="name" placeholder="İsim" required>
+        <input class="field" id="contact-company" aria-label="company" maxlength="160" name="company" placeholder="Şirket">
+        <input class="field" id="contact-email" aria-label="email" maxlength="254" name="email" type="email" placeholder="E-posta" required>
+        <input class="field" id="contact-phone" aria-label="phone" maxlength="60" name="phone" type="tel" placeholder="Telefon">
+        <textarea class="field" id="contact-message" aria-label="Message" minlength="10" maxlength="3000" name="message" placeholder="Mesajınız" required></textarea>
       </div>
       <div class="form-footer">
-        <span class="form-note">Gönder dediğinizde e-posta programınız açılır. Doğrudan form gönderimi daha sonra Vercel üzerinden bağlanabilir.</span>
+        <span class="form-note">Talebiniz dMinus'a iletilir. Lütfen şifre veya hassas kişisel veri göndermeyin. <a href="/datenschutz/">Gizlilik</a>.</span>
         <button class="btn btn-primary" type="submit">Talep gönder<span class="arrow">→</span></button>
       </div>
-    </form>
+    <p class="form-status" data-form-status role="status" aria-live="polite"></p></form>
   </div>
 </section>
 </main>
