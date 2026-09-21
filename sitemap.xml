@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://dminus.co/de/</loc></url>
-  <url><loc>https://dminus.co/en/</loc></url>
-  <url><loc>https://dminus.co/tr/</loc></url>
-  <url><loc>https://dminus.co/impressum/</loc></url>
-  <url><loc>https://dminus.co/datenschutz/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://dminus.co/de/</loc></url>
+<url><loc>https://dminus.co/de/industries/</loc></url>
+<url><loc>https://dminus.co/de/industries/tax-accounting/</loc></url>
+<url><loc>https://dminus.co/de/industries/medical-practices/</loc></url>
+<url><loc>https://dminus.co/de/industries/law-firms/</loc></url>
+<url><loc>https://dminus.co/de/industries/dry-cleaners-tailors/</loc></url>
+<url><loc>https://dminus.co/de/industries/trades-construction/</loc></url>
+<url><loc>https://dminus.co/de/industries/hospitality-retail/</loc></url>
+<url><loc>https://dminus.co/de/industries/logistics-manufacturing/</loc></url>
+<url><loc>https://dminus.co/de/industries/startups-growing-teams/</loc></url>
+<url><loc>https://dminus.co/de/services/</loc></url>
+<url><loc>https://dminus.co/de/services/digital-presence/</loc></url>
+<url><loc>https://dminus.co/de/services/workplace-it/</loc></url>
+<url><loc>https://dminus.co/de/services/infrastructure-cloud/</loc></url>
+<url><loc>https://dminus.co/de/services/cybersecurity-recovery/</loc></url>
+<url><loc>https://dminus.co/de/services/software-automation/</loc></url>
+<url><loc>https://dminus.co/de/services/research-intelligence/</loc></url>
+<url><loc>https://dminus.co/de/services/managed-digital-services/</loc></url>
+<url><loc>https://dminus.co/en/</loc></url>
+<url><loc>https://dminus.co/en/industries/</loc></url>
+<url><loc>https://dminus.co/en/industries/tax-accounting/</loc></url>
+<url><loc>https://dminus.co/en/industries/medical-practices/</loc></url>
+<url><loc>https://dminus.co/en/industries/law-firms/</loc></url>
+<url><loc>https://dminus.co/en/industries/dry-cleaners-tailors/</loc></url>
+<url><loc>https://dminus.co/en/industries/trades-construction/</loc></url>
+<url><loc>https://dminus.co/en/industries/hospitality-retail/</loc></url>
+<url><loc>https://dminus.co/en/industries/logistics-manufacturing/</loc></url>
+<url><loc>https://dminus.co/en/industries/startups-growing-teams/</loc></url>
+<url><loc>https://dminus.co/en/services/</loc></url>
+<url><loc>https://dminus.co/en/services/digital-presence/</loc></url>
+<url><loc>https://dminus.co/en/services/workplace-it/</loc></url>
+<url><loc>https://dminus.co/en/services/infrastructure-cloud/</loc></url>
+<url><loc>https://dminus.co/en/services/cybersecurity-recovery/</loc></url>
+<url><loc>https://dminus.co/en/services/software-automation/</loc></url>
+<url><loc>https://dminus.co/en/services/research-intelligence/</loc></url>
+<url><loc>https://dminus.co/en/services/managed-digital-services/</loc></url>
+<url><loc>https://dminus.co/tr/</loc></url>
+<url><loc>https://dminus.co/tr/industries/</loc></url>
+<url><loc>https://dminus.co/tr/industries/tax-accounting/</loc></url>
+<url><loc>https://dminus.co/tr/industries/medical-practices/</loc></url>
+<url><loc>https://dminus.co/tr/industries/law-firms/</loc></url>
+<url><loc>https://dminus.co/tr/industries/dry-cleaners-tailors/</loc></url>
+<url><loc>https://dminus.co/tr/industries/trades-construction/</loc></url>
+<url><loc>https://dminus.co/tr/industries/hospitality-retail/</loc></url>
+<url><loc>https://dminus.co/tr/industries/logistics-manufacturing/</loc></url>
+<url><loc>https://dminus.co/tr/industries/startups-growing-teams/</loc></url>
+<url><loc>https://dminus.co/tr/services/</loc></url>
+<url><loc>https://dminus.co/tr/services/digital-presence/</loc></url>
+<url><loc>https://dminus.co/tr/services/workplace-it/</loc></url>
+<url><loc>https://dminus.co/tr/services/infrastructure-cloud/</loc></url>
+<url><loc>https://dminus.co/tr/services/cybersecurity-recovery/</loc></url>
+<url><loc>https://dminus.co/tr/services/software-automation/</loc></url>
+<url><loc>https://dminus.co/tr/services/research-intelligence/</loc></url>
+<url><loc>https://dminus.co/tr/services/managed-digital-services/</loc></url>
+<url><loc>https://dminus.co/impressum/</loc></url>
+<url><loc>https://dminus.co/datenschutz/</loc></url>
 </urlset>

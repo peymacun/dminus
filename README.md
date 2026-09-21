@@ -1,6 +1,6 @@
 # dMinus website
 
-Static, Vercel-ready multilingual website for **dMinus only**. Pages: `/de/`, `/en/`, `/tr/`, `/impressum/`, `/datenschutz/`. Main site remains framework-free HTML/CSS/JS. Contact submission uses a small Vercel Function.
+Static, Vercel-ready multilingual website for **dMinus only**. Pages: `/de/`, `/en/`, `/tr/`, 8 localized industry details + an industry hub per language, 7 localized service details + a services hub per language, `/impressum/`, `/datenschutz/`. Main site remains framework-free HTML/CSS/JS. Contact submission uses a small Vercel Function.
 
 ## Deploy
 
@@ -29,3 +29,7 @@ Verify the sending domain at your chosen provider and validate live form deliver
 4. Submit a valid inquiry, invalid email, overly long message, spam-field and repeated requests.
 5. Verify that exactly one email arrives at `info@dminus.co`.
 6. Confirm response headers, sitemap and canonical redirects on both apex and www hosts.
+
+## DigitalMinus subpages
+
+Homepage industry and service cards link to real, localized static pages under `/{lang}/industries/{slug}/` and `/{lang}/services/{slug}/`. All three language variants share consistent slugs, so language switching preserves the current detail page. Each page includes a scoped problem, concrete potential deliverables, an illustrative scenario and links to relevant pages. The scenario is illustrative, not a customer testimonial. Sitemap includes all canonical URLs at the existing dminus.co domain; update canonical/hreflang and sitemap only after moving to a new confirmed domain. No Vercel project settings or contact API changes are required for these pages.
