@@ -867,3 +867,41 @@ html[data-theme="dark"] { --accent-strong:#c1ef24; }
 /* Keep longer DigitalMinus wordmark and navigation from colliding on laptops */
 @media (min-width:1051px) and (max-width:1300px){.nav-links{gap:12px;font-size:12px}.nav{gap:14px}.logo{font-size:22px}.nav-actions{gap:7px}.desktop-cta{padding-left:12px;padding-right:12px}}
 @media (max-width:1150px){.nav-links{display:none}.mobile-toggle{display:grid;place-items:center}.desktop-cta{display:none}.mobile-panel.open{display:block;border-top:1px solid var(--line);padding:18px 24px 22px}.mobile-panel nav{display:grid;gap:13px;font-size:15px;font-weight:700}}
+
+
+/* DigitalMinus detail pages and linked homepage cards */
+.dm-industry-grid a{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 13px;font-size:14px;font-weight:700;min-height:84px;position:relative;transition:border-color .2s,transform .2s}
+.dm-industry-grid a:hover,.dm-related-card:hover{border-color:var(--accent-strong);transform:translateY(-2px)}
+.dm-industry-grid a b{display:block;font-size:10px;letter-spacing:.1em;margin-bottom:10px;color:var(--accent-strong)}
+.dm-card-arrow{position:absolute;right:13px;top:13px;color:var(--accent-strong)}
+.dm-index-link{display:inline-block;margin-top:23px;color:var(--accent-strong);font-size:14px;font-weight:800;text-decoration:underline;text-underline-offset:5px}
+.dm-index-light{color:#c1ef24;display:block;margin:0 0 25px}
+.dm-detail-hero{padding:65px 0 95px;background:radial-gradient(ellipse at 95% 0%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 46%)}
+.dm-detail-hero h1{font-size:clamp(48px,6vw,87px);max-width:1070px;letter-spacing:-.067em;line-height:1.04;margin:5px 0 25px}
+.dm-detail-lead{font-size:clamp(18px,1.8vw,23px);line-height:1.6;color:var(--muted);max-width:850px;margin:0 0 33px}
+.dm-crumb{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;margin-bottom:62px;color:var(--muted)}
+.dm-crumb a:hover{color:var(--accent-strong)}
+.dm-crumb span:last-child{color:var(--text)}
+.dm-detail-actions{display:flex;gap:12px;flex-wrap:wrap}
+.dm-detail-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(35px,7vw,110px);align-items:start}
+.dm-detail-main{background:var(--surface-soft)}
+.dm-detail-main .section-heading,.dm-detail-process .section-heading{font-size:clamp(32px,4vw,53px);line-height:1.12;letter-spacing:-.05em}
+.dm-detail-main .section-subtitle,.dm-detail-process .section-subtitle{font-size:17px;line-height:1.75}
+.dm-feature-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:13px}
+.dm-feature-list li{display:grid;grid-template-columns:25px 1fr;gap:13px;align-items:start;border-bottom:1px solid var(--line);padding:0 0 18px}
+.dm-feature-list li>span{color:var(--accent-strong);font-weight:800;font-size:20px}
+.dm-feature-list p{font-size:16px;line-height:1.65;margin:0}
+.dm-example{padding:28px 30px;border:1px solid var(--line);border-radius:18px;margin-top:33px;background:var(--surface)}
+.dm-example p{margin:0;font-size:16px;line-height:1.75}
+.dm-related{background:var(--surface)}
+.dm-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:35px}
+.dm-related-card{display:flex;flex-direction:column;position:relative;min-height:230px;padding:27px;border:1px solid var(--line);background:var(--surface-soft);border-radius:17px;transition:transform .2s,border-color .2s}
+.dm-related-card>span{font-size:10px;color:var(--accent-strong);font-weight:800;letter-spacing:.12em}
+.dm-related-card h2,.dm-related-card h3{font-size:21px;line-height:1.24;letter-spacing:-.035em;margin:32px 0 10px}
+.dm-related-card p{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 19px}
+.dm-related-card strong{color:var(--accent-strong);font-size:20px;margin-top:auto}
+.dm-back-link{display:inline-block;margin-top:29px;font-weight:800;font-size:14px;color:var(--accent-strong)}
+.dm-detail-process{background:var(--surface-soft)}
+.dm-detail-process .scope-note{font-size:13px;line-height:1.6}
+@media(max-width:1050px){.dm-detail-columns{grid-template-columns:1fr;gap:35px}.dm-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.dm-detail-hero{padding:43px 0 63px}.dm-crumb{margin-bottom:42px}.dm-related-grid{grid-template-columns:1fr}.dm-related-card{min-height:190px}.dm-industry-grid a{font-size:12px;min-height:74px;padding:12px}.dm-detail-actions{display:grid}.dm-detail-hero h1{font-size:clamp(45px,11vw,70px)}}
