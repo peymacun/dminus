@@ -863,3 +863,7 @@ html[data-theme="dark"] { --accent-strong:#c1ef24; }
 .logo{letter-spacing:-.065em}
 @media(max-width:1050px){.dm-hero-grid,.dm-split{grid-template-columns:1fr;gap:45px}.dm-hero-art{max-width:640px;width:100%;margin:auto;transform:none}.dm-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dm-card:last-child{grid-column:span 2}.dm-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:720px){.dm-hero{padding:65px 0}.dm-hero-copy h1{font-size:clamp(52px,13vw,80px)}.dm-card-grid,.dm-steps,.dm-modes{grid-template-columns:1fr}.dm-card:last-child{grid-column:auto}.dm-card{min-height:230px}.dm-split{gap:32px}.dm-industry-panel{padding:14px}.dm-industry-grid span{font-size:12px;min-height:74px;padding:12px}.dm-art-center{margin:22px 0;min-height:155px}.dm-hero-art{padding:15px}.dm-art-tiles>span{font-size:11px;min-height:68px}.dm-final{padding:68px 0}}
+
+/* Keep longer DigitalMinus wordmark and navigation from colliding on laptops */
+@media (min-width:1051px) and (max-width:1300px){.nav-links{gap:12px;font-size:12px}.nav{gap:14px}.logo{font-size:22px}.nav-actions{gap:7px}.desktop-cta{padding-left:12px;padding-right:12px}}
+@media (max-width:1150px){.nav-links{display:none}.mobile-toggle{display:grid;place-items:center}.desktop-cta{display:none}.mobile-panel.open{display:block;border-top:1px solid var(--line);padding:18px 24px 22px}.mobile-panel nav{display:grid;gap:13px;font-size:15px;font-weight:700}}
